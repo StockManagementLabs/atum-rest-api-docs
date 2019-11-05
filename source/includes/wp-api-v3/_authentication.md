@@ -1,5 +1,8 @@
 # Authentication #
 
+<aside class="notice">
+The ATUM REST API is 100% compatible with the WooCommerce's API authentication, so all the info in this section refers to it. 
+</aside> 
 WooCommerce includes two ways to authenticate with the WP REST API. It is also possible to authenticate using any [WP REST API authentication](http://v3.wp-api.org/guide/authentication/) plugin or method.
 
 ## REST API keys ##
@@ -8,7 +11,7 @@ Pre-generated keys can be used to authenticate use of the REST API endpoints. Ne
 
 ### Generating API keys in the WordPress admin interface ###
 
-To create or manage keys for a specific WordPress user, go to WooCommerce > Settings > API > Keys/Apps.
+To create or manage keys for a specific WordPress user, go to <code>WooCommerce > Advanced > REST API</code>.
 
 ![WooCommerce REST API keys settings](images/woocommerce-api-keys-settings.png)
 
@@ -162,7 +165,7 @@ You may use [HTTP Basic Auth](http://en.wikipedia.org/wiki/Basic_access_authenti
 > HTTP Basic Auth example
 
 ```shell
-curl https://www.example.com/wp-json/wc/v3/orders \
+curl https://www.example.com/wp-json/wc/v3/atum/purchase-orders \
     -u consumer_key:consumer_secret
 ```
 
@@ -302,7 +305,7 @@ First you need to determine the HTTP method you will be using for the request, a
 
 The **HTTP method** will be `GET` in our case.
 
-The **Request URL** will be the endpoint you are posting to, e.g. `http://www.example.com/wp-json/wc/v3/orders`.
+The **Request URL** will be the endpoint you are posting to, e.g. `http://www.example.com/wp-json/wc/v3/atum/purchase-orders`.
 
 #### Collect parameters ####
 

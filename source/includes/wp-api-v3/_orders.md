@@ -89,22 +89,24 @@ The orders API allows you to create, view, update, and delete individual, or a b
 
 ### Order - Line items properties ###
 
-| Attribute      | Type    | Description                                                                                                   |
-|----------------|---------|---------------------------------------------------------------------------------------------------------------|
-| `id`           | integer | Item ID. <i class="label label-info">read-only</i>                                                            |
-| `name`         | string  | Product name.                                                                                                 |
-| `product_id`   | integer | Product ID.                                                                                                   |
-| `variation_id` | integer | Variation ID, if applicable.                                                                                  |
-| `quantity`     | integer | Quantity ordered.                                                                                             |
-| `tax_class`    | string | Slug of the tax class of product.                                                                                         |
-| `subtotal`     | string  | Line subtotal (before discounts).                                                                             |
-| `subtotal_tax` | string  | Line subtotal tax (before discounts). <i class="label label-info">read-only</i>                               |
-| `total`        | string  | Line total (after discounts).                                                                                 |
-| `total_tax`    | string  | Line total tax (after discounts). <i class="label label-info">read-only</i>                                   |
-| `taxes`        | array   | Line taxes. See [Order - Taxes properties](#order-taxes-properties) <i class="label label-info">read-only</i> |
-| `meta_data`    | array   | Meta data. See [Order - Meta data properties](#order-meta-data-properties)                                    |
-| `sku`          | string  | Product SKU. <i class="label label-info">read-only</i>                                                        |
-| `price`        | string  | Product price. <i class="label label-info">read-only</i>                                                      |
+| Attribute        | Type    | Description                                                                                                                                                                                                                       |
+|------------------|---------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `id`             | integer | Item ID. <i class="label label-info">read-only</i>                                                                                                                                                                                |
+| `name`           | string  | Product name.                                                                                                                                                                                                                     |
+| `product_id`     | integer | Product ID.                                                                                                                                                                                                                       |
+| `variation_id`   | integer | Variation ID, if applicable.                                                                                                                                                                                                      |
+| `quantity`       | integer | Quantity ordered.                                                                                                                                                                                                                 |
+| `tax_class`      | string | Slug of the tax class of product.                                                                                                                                                                                                  |
+| `subtotal`       | string  | Line subtotal (before discounts).                                                                                                                                                                                                 |
+| `subtotal_tax`   | string  | Line subtotal tax (before discounts). <i class="label label-info">read-only</i>                                                                                                                                                   |
+| `total`          | string  | Line total (after discounts).                                                                                                                                                                                                     |
+| `total_tax`      | string  | Line total tax (after discounts). <i class="label label-info">read-only</i>                                                                                                                                                       |
+| `taxes`          | array   | Line taxes. See [Order - Taxes properties](#order-taxes-properties) <i class="label label-info">read-only</i>                                                                                                                     |
+| `meta_data`      | array   | Meta data. See [Order - Meta data properties](#order-meta-data-properties)                                                                                                                                                        |
+| `sku`            | string  | Product SKU. <i class="label label-info">read-only</i>                                                                                                                                                                            |
+| `price`          | string  | Product price. <i class="label label-info">read-only</i>                                                                                                                                                                          |
+| `mi_inventories` | array   | Multi-Inventory order items.  See [Order - MI Order Items properties](#order-mi-order-items-properties-atum-multi-inventory) <i class="label label-addon">Multi-Inventory</i> <i class="label label-atum">ATUM</i>                                |
+| `bom_items`      | array   | BOM order items.  See [Order - BOM Order Items properties](#order-bom-order-items-properties-atum-product-levels) <i class="label label-info">read-only</i> <i class="label label-addon">Product Levels</i> <i class="label label-atum">ATUM</i> |
 
 ### Order - Tax lines properties ###
 
@@ -175,6 +177,31 @@ The orders API allows you to create, view, update, and delete individual, or a b
 | `shipping_tax_total` | string  | Shipping tax total. <i class="label label-info">read-only</i>                       |
 | `meta_data`          | array   | Meta data. See [Order - Meta data properties](#order-meta-data-properties)          |
 
+### Order - MI Order Items properties <i class="label label-atum">ATUM</i> <i class="label label-addon">Multi-Inventory</i> ###
+
+| Attribute       | Type    | Description                                                                                                                |
+|-----------------|---------|----------------------------------------------------------------------------------------------------------------------------|
+| `id`            | integer | The order item inventory ID.                                                                                               |
+| `delete`        | boolean | Set to true to delete the order item inventory with the specified inventory ID. <i class="label label-info">write-only</i> |
+| `order_item_id` | integer | The order item ID linked to this order item inventory.                                                                     |
+| `inventory_id`  | integer | The inventory ID linked to the order item.                                                                                 |
+| `product_id`    | integer | The product ID from where the inventory comes.                                                                             |
+| `qty`           | number  | The quantity of the specified inventory that is used on the order item.                                                    |
+| `order_type`    | integer | The type of order (WC Order = `1`, Purchase Order = `2`, Inventory Log = `3`).                                             |
+| `subtotal`      | number  | Order item inventory's subtotal.                                                                                           |
+| `total`         | number  | Order item inventory's total.                                                                                              |
+| `refund_qty`    | number  | Order item inventory's refund quantity.                                                                                    |
+| `refund_total`  | number  | Order item inventory's refund total.  
+
+### Order - BOM Order Items properties <i class="label label-atum">ATUM</i> <i class="label label-addon">Product Levels</i> ###
+
+| Attribute  | Type    | Description                                                                                                  |
+|------------|---------|--------------------------------------------------------------------------------------------------------------|
+| `id`       | integer | The BOM order item ID. <i class="label label-info">read-only</i>                                             |
+| `bom_id`   | integer | The BOM product ID associated to the BOM order item.  <i class="label label-info">read-only</i>              |
+| `bom_type` | string  | The BOM product type. Options: `product_part` and `raw_material`.  <i class="label label-info">read-only</i> |                                                                         |
+| `qty`      | number  | The quantity of the specified BOM that is used on the order item.  <i class="label label-info">read-only</i> |                                                                                      |
+
 ## Create an order ##
 
 This API helps you to create a new order.
@@ -188,7 +215,7 @@ This API helps you to create a new order.
 	</div>
 </div>
 
-> Example of create a paid order:
+> Example of create a paid order with Multi-Inventory's order items and BOM order items:
 
 ```shell
 curl -X POST https://example.com/wp-json/wc/v3/orders \
@@ -223,12 +250,28 @@ curl -X POST https://example.com/wp-json/wc/v3/orders \
   "line_items": [
     {
       "product_id": 93,
-      "quantity": 2
+      "quantity": 2,
+      "mi_inventories": [
+        {
+      	  "inventory_id": 152,
+      	  "qty": 1
+        },
+        {
+      	  "inventory_id": 126,
+      	  "qty": 1
+        }
+      ]
     },
     {
       "product_id": 22,
       "variation_id": 23,
-      "quantity": 1
+      "quantity": 1,
+      "mi_inventories": [
+        {
+          "inventory_id": 112,
+          "qty": 1
+        }        
+      ]
     }
   ],
   "shipping_lines": [
@@ -271,12 +314,28 @@ const data = {
   line_items: [
     {
       product_id: 93,
-      quantity: 2
+      quantity: 2,
+      mi_inventories: [
+        {
+       	  inventory_id: 152,
+       	  qty: 1
+        },
+        {
+          inventory_id: 126,
+          qty: 1
+        }
+      ]
     },
     {
       product_id: 22,
       variation_id: 23,
-      quantity: 1
+      quantity: 1,
+      mi_inventories: [
+        {
+          inventory_id: 112,
+          qty: 1
+        }        
+      ]
     }
   ],
   shipping_lines: [
@@ -328,12 +387,28 @@ $data = [
     'line_items' => [
         [
             'product_id' => 93,
-            'quantity' => 2
+            'quantity' => 2,
+            'mi_inventories' => [
+                [
+                    'inventory_id' => 152,
+                   	'qty' => 1
+                ],
+                [
+                    'inventory_id' => 126,
+                    'qty' => 1
+                ]
+            ]
         ],
         [
             'product_id' => 22,
             'variation_id' => 23,
-            'quantity' => 1
+            'quantity' => 1,
+            'mi_inventories' => [
+                [
+                    'inventory_id' => 112,
+                    'qty' => 1
+                ]        
+            ]
         ]
     ],
     'shipping_lines' => [
@@ -379,12 +454,28 @@ data = {
     "line_items": [
         {
             "product_id": 93,
-            "quantity": 2
+            "quantity": 2,
+            "mi_inventories": [
+                {
+                    "inventory_id": 152,
+                   	"qty": 1
+                },
+                {
+                    "inventory_id": 126,
+                    "qty": 1
+                }
+            ]
         },
         {
             "product_id": 22,
             "variation_id": 23,
-            "quantity": 1
+            "quantity": 1,
+            "mi_inventories": [
+                {
+                    "inventory_id": 112,
+                    "qty": 1
+                }        
+            ]
         }
     ],
     "shipping_lines": [
@@ -429,12 +520,28 @@ data = {
   line_items: [
     {
       product_id: 93,
-      quantity: 2
+      quantity: 2,
+      mi_inventories: [
+        {
+          inventory_id: 152,
+          qty: 1
+        },
+        {
+          inventory_id: 126,
+          qty: 1
+        }
+      ]
     },
     {
       product_id: 22,
       variation_id: 23,
-      quantity: 1
+      quantity: 1,
+      mi_inventories: [
+        {
+          inventory_id: 112,
+          qty: 1
+        }        
+      ]
     }
   ],
   shipping_lines: [
@@ -537,7 +644,27 @@ woocommerce.post("orders", data).parsed_response
       ],
       "meta_data": [],
       "sku": "",
-      "price": 3
+      "price": 3,
+      "mi_inventories": [
+        {
+          "id": 191,
+          "inventory_id": 152,
+          "qty": 1,                
+          "subtotal": 6,
+          "total": 6,
+          "refund_qty": 0,
+          "refund_total": 0
+        },
+        {
+          "id": 192,
+          "inventory_id": 126,
+          "qty": 1,
+          "subtotal": 6,
+          "total": 6,
+          "refund_qty": 0,
+          "refund_total": 0
+        }
+      ]
     },
     {
       "id": 316,
@@ -570,7 +697,18 @@ woocommerce.post("orders", data).parsed_response
         }
       ],
       "sku": "Bar3",
-      "price": 12
+      "price": 12,
+      "mi_inventories": [
+        {
+          "id": 193,
+          "inventory_id": 112,
+          "qty": 1,
+          "subtotal": 12,
+          "total": 12,
+          "refund_qty": 0,
+          "refund_total": 0
+        }
+      ]
     }
   ],
   "tax_lines": [
@@ -742,7 +880,28 @@ woocommerce.get("orders/727").parsed_response
       ],
       "meta_data": [],
       "sku": "",
-      "price": 3
+      "price": 3,
+      "mi_inventories": [
+        {
+          "id": 180,
+          "inventory_id": 152,
+          "qty": 1,
+          "subtotal": 3,
+          "total": 3,
+          "refund_qty": 0,
+          "refund_total": 0
+        },
+        {
+          "id": 181,
+          "inventory_id": 126,
+          "qty": 1,
+          "subtotal": 3,
+          "total": 3,
+          "refund_qty": 0,
+          "refund_total": 0
+        }
+      ],
+      "bom_items": []    
     },
     {
       "id": 316,
@@ -775,7 +934,25 @@ woocommerce.get("orders/727").parsed_response
         }
       ],
       "sku": "Bar3",
-      "price": 12
+      "price": 12,
+      "mi_inventories": [
+        {
+          "id": 178,
+          "inventory_id": 83,
+          "qty": 1,
+          "subtotal": 12,
+          "total": 12,
+          "refund_qty": 0,
+          "refund_total": 0
+        }
+      ],
+      "bom_items": [
+        {
+          "bom_id": 184,
+          "bom_type": "product_part",
+          "qty": 6
+        }
+      ]  
     }
   ],
   "tax_lines": [
@@ -959,7 +1136,28 @@ woocommerce.get("orders").parsed_response
         ],
         "meta_data": [],
         "sku": "",
-        "price": 3
+        "price": 3,
+        "mi_inventories": [
+          {
+            "id": 180,
+            "inventory_id": 152,
+            "qty": 1,
+            "subtotal": 3,
+            "total": 3,
+            "refund_qty": 0,
+            "refund_total": 0
+          },
+          {
+            "id": 181,
+            "inventory_id": 126,
+            "qty": 1,
+            "subtotal": 3,
+            "total": 3,
+            "refund_qty": 0,
+            "refund_total": 0
+          }
+        ],
+        "bom_items": []   
       },
       {
         "id": 316,
@@ -992,7 +1190,25 @@ woocommerce.get("orders").parsed_response
           }
         ],
         "sku": "Bar3",
-        "price": 12
+        "price": 12,
+        "mi_inventories": [
+          {
+            "id": 178,
+            "inventory_id": 83,
+            "qty": 1,
+            "subtotal": 12,
+            "total": 12,
+            "refund_qty": 0,
+            "refund_total": 0
+          }
+        ],
+        "bom_items": [
+          {
+            "bom_id": 184,
+            "bom_type": "product_part",
+            "qty": 6
+          }
+        ]  
       }
     ],
     "tax_lines": [
@@ -1113,7 +1329,9 @@ woocommerce.get("orders").parsed_response
         "taxes": [],
         "meta_data": [],
         "sku": "",
-        "price": 9
+        "price": 9,
+        "mi_inventories": [],
+        "bom_items": []
       },
       {
         "id": 313,
@@ -1129,7 +1347,9 @@ woocommerce.get("orders").parsed_response
         "taxes": [],
         "meta_data": [],
         "sku": "",
-        "price": 20
+        "price": 20,
+        "mi_inventories": [],
+        "bom_items": []
       }
     ],
     "tax_lines": [],
@@ -1220,18 +1440,42 @@ This API lets you make changes to an order.
 	</div>
 </div>
 
+> Example of updating Multi-Inventory's order items for a specific order item:
+
 ```shell
 curl -X PUT https://example.com/wp-json/wc/v3/orders/727 \
 	-u consumer_key:consumer_secret \
 	-H "Content-Type: application/json" \
 	-d '{
-  "status": "completed"
-}'
+      "line_items": [
+        {
+          "id": 315,
+          "product_id": 93,
+          "mi_inventories": [
+            {
+              "inventory_id": 152,
+              "qty": 3
+            }
+          ]
+        }
+      ]
+    }'
 ```
 
 ```javascript
 const data = {
-  status: "completed"
+  line_items: [
+   {
+     id: 315,
+     product_id: 93,
+     mi_inventories: [
+       {
+         inventory_id: 152,
+         qty: 3
+       }
+     ]
+   }
+ ]
 };
 
 WooCommerce.put("orders/727", data)
@@ -1246,7 +1490,18 @@ WooCommerce.put("orders/727", data)
 ```php
 <?php
 $data = [
-    'status' => 'completed'
+    'line_items' => [
+        [
+           'id' => 315,
+            'product_id' => 93,
+            'mi_inventories' => [
+                [
+                    'inventory_id' => 152,
+                    'qty' => 3
+                ]
+            ]
+        ]
+    ]
 ];
 
 print_r($woocommerce->put('orders/727', $data));
@@ -1255,7 +1510,18 @@ print_r($woocommerce->put('orders/727', $data));
 
 ```python
 data = {
-    "status": "completed"
+  "line_items": [
+    {
+      "id": 315,
+      "product_id": 93,
+      "mi_inventories": [
+        {
+          "inventory_id": 152,
+          "qty": 3
+        }
+      ]
+    }
+  ]
 }
 
 print(wcapi.put("orders/727", data).json())
@@ -1263,7 +1529,18 @@ print(wcapi.put("orders/727", data).json())
 
 ```ruby
 data = {
-  status: "completed"
+  line_items: [
+    {
+      id: 315,
+      product_id: 93,
+      mi_inventories: [
+        {
+          inventory_id: 152,
+          qty: 3
+        }
+      ]
+    }
+  ]
 }
 
 woocommerce.put("orders/727", data).parsed_response
@@ -1279,7 +1556,7 @@ woocommerce.put("orders/727", data).parsed_response
   "order_key": "wc_order_58d2d042d1d",
   "created_via": "rest-api",
   "version": "3.0.0",
-  "status": "completed",
+  "status": "precessing",
   "currency": "USD",
   "date_created": "2017-03-22T16:28:02",
   "date_created_gmt": "2017-03-22T19:28:02",
@@ -1362,7 +1639,18 @@ woocommerce.put("orders/727", data).parsed_response
       ],
       "meta_data": [],
       "sku": "",
-      "price": 3
+      "price": 3,
+      "mi_inventories": [
+        {
+          "id": 180,
+          "inventory_id": 152,
+          "qty": 2,
+          "subtotal": 6,
+          "total": 6,
+          "refund_qty": 0,
+          "refund_total": 0
+        }
+      ]
     },
     {
       "id": 316,
@@ -1574,7 +1862,28 @@ woocommerce.delete("orders/727", force: true).parsed_response
       ],
       "meta_data": [],
       "sku": "",
-      "price": 3
+      "price": 3,
+      "mi_inventories": [
+        {
+          "id": 180,
+          "inventory_id": 152,
+          "qty": 1,
+          "subtotal": 3,
+          "total": 3,
+          "refund_qty": 0,
+          "refund_total": 0
+        },
+        {
+          "id": 181,
+          "inventory_id": 126,
+          "qty": 1,
+          "subtotal": 3,
+          "total": 3,
+          "refund_qty": 0,
+          "refund_total": 0
+        }
+      ],
+      "bom_items": [] 
     },
     {
       "id": 316,
@@ -1607,7 +1916,25 @@ woocommerce.delete("orders/727", force: true).parsed_response
         }
       ],
       "sku": "Bar3",
-      "price": 12
+      "price": 12,
+      "mi_inventories": [
+        {
+          "id": 178,
+          "inventory_id": 83,
+          "qty": 1,
+          "subtotal": 12,
+          "total": 12,
+          "refund_qty": 0,
+          "refund_total": 0
+        }
+      ],
+      "bom_items": [
+        {
+          "bom_id": 184,
+          "bom_type": "product_part",
+          "qty": 6
+        }
+      ]  
     }
   ],
   "tax_lines": [

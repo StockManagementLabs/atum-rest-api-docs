@@ -20,30 +20,14 @@ includes:
   - wp-api-v3/introduction
   - wp-api-v3/authentication
   - wp-api-v3/index
-  - wp-api-v3/coupons
-  - wp-api-v3/customers
   - wp-api-v3/orders
-  - wp-api-v3/order-notes
-  - wp-api-v3/order-refunds
+  - wp-api-v3/order-notes 
   - wp-api-v3/products
-  - wp-api-v3/product-variations
-  - wp-api-v3/product-attributes
-  - wp-api-v3/product-attribute-terms
-  - wp-api-v3/product-categories
-  - wp-api-v3/product-shipping-classes
-  - wp-api-v3/product-tags
-  - wp-api-v3/product-reviews
-  - wp-api-v3/reports
-  - wp-api-v3/taxes
-  - wp-api-v3/tax-classes
-  - wp-api-v3/webhooks
+  - wp-api-v3/product-variations  
+  - wp-api-v3/product-categories  
+  - wp-api-v3/reports 
   - wp-api-v3/settings
-  - wp-api-v3/setting-options
-  - wp-api-v3/payment-gateways
-  - wp-api-v3/shipping-zones
-  - wp-api-v3/shipping-zone-locations
-  - wp-api-v3/shipping-zone-methods
-  - wp-api-v3/shipping-methods
+  - wp-api-v3/setting-options  
   - wp-api-v3/system-status
   - wp-api-v3/system-status-tools
   - wp-api-v3/data
