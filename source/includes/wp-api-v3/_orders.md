@@ -568,10 +568,10 @@ woocommerce.post("orders", data).parsed_response
   "version": "3.0.0",
   "status": "processing",
   "currency": "USD",
-  "date_created": "2017-03-22T16:28:02",
-  "date_created_gmt": "2017-03-22T19:28:02",
-  "date_modified": "2017-03-22T16:28:08",
-  "date_modified_gmt": "2017-03-22T19:28:08",
+  "date_created": "2019-03-22T16:28:02",
+  "date_created_gmt": "2019-03-22T19:28:02",
+  "date_modified": "2019-03-22T16:28:08",
+  "date_modified_gmt": "2019-03-22T19:28:08",
   "discount_total": "0.00",
   "discount_tax": "0.00",
   "shipping_total": "10.00",
@@ -611,8 +611,8 @@ woocommerce.post("orders", data).parsed_response
   "payment_method": "bacs",
   "payment_method_title": "Direct Bank Transfer",
   "transaction_id": "",
-  "date_paid": "2017-03-22T16:28:08",
-  "date_paid_gmt": "2017-03-22T19:28:08",
+  "date_paid": "2019-03-22T16:28:08",
+  "date_paid_gmt": "2019-03-22T19:28:08",
   "date_completed": null,
   "date_completed_gmt": null,
   "cart_hash": "",
@@ -804,10 +804,10 @@ woocommerce.get("orders/727").parsed_response
   "version": "3.0.0",
   "status": "processing",
   "currency": "USD",
-  "date_created": "2017-03-22T16:28:02",
-  "date_created_gmt": "2017-03-22T19:28:02",
-  "date_modified": "2017-03-22T16:28:08",
-  "date_modified_gmt": "2017-03-22T19:28:08",
+  "date_created": "2019-03-22T16:28:02",
+  "date_created_gmt": "2019-03-22T19:28:02",
+  "date_modified": "2019-03-22T16:28:08",
+  "date_modified_gmt": "2019-03-22T19:28:08",
   "discount_total": "0.00",
   "discount_tax": "0.00",
   "shipping_total": "10.00",
@@ -847,8 +847,8 @@ woocommerce.get("orders/727").parsed_response
   "payment_method": "bacs",
   "payment_method_title": "Direct Bank Transfer",
   "transaction_id": "",
-  "date_paid": "2017-03-22T16:28:08",
-  "date_paid_gmt": "2017-03-22T19:28:08",
+  "date_paid": "2019-03-22T16:28:08",
+  "date_paid_gmt": "2019-03-22T19:28:08",
   "date_completed": null,
   "date_completed_gmt": null,
   "cart_hash": "",
@@ -1055,10 +1055,10 @@ woocommerce.get("orders").parsed_response
     "version": "3.0.0",
     "status": "processing",
     "currency": "USD",
-    "date_created": "2017-03-22T16:28:02",
-    "date_created_gmt": "2017-03-22T19:28:02",
-    "date_modified": "2017-03-22T16:28:08",
-    "date_modified_gmt": "2017-03-22T19:28:08",
+    "date_created": "2019-03-22T16:28:02",
+    "date_created_gmt": "2019-03-22T19:28:02",
+    "date_modified": "2019-03-22T16:28:08",
+    "date_modified_gmt": "2019-03-22T19:28:08",
     "discount_total": "0.00",
     "discount_tax": "0.00",
     "shipping_total": "10.00",
@@ -1098,8 +1098,8 @@ woocommerce.get("orders").parsed_response
     "payment_method": "bacs",
     "payment_method_title": "Direct Bank Transfer",
     "transaction_id": "",
-    "date_paid": "2017-03-22T16:28:08",
-    "date_paid_gmt": "2017-03-22T19:28:08",
+    "date_paid": "2019-03-22T16:28:08",
+    "date_paid_gmt": "2019-03-22T19:28:08",
     "date_completed": null,
     "date_completed_gmt": null,
     "cart_hash": "",
@@ -1259,10 +1259,10 @@ woocommerce.get("orders").parsed_response
     "version": "3.0.0",
     "status": "completed",
     "currency": "USD",
-    "date_created": "2017-03-21T16:16:00",
-    "date_created_gmt": "2017-03-21T19:16:00",
-    "date_modified": "2017-03-21T16:54:51",
-    "date_modified_gmt": "2017-03-21T19:54:51",
+    "date_created": "2019-03-21T16:16:00",
+    "date_created_gmt": "2019-03-21T19:16:00",
+    "date_modified": "2019-03-21T16:54:51",
+    "date_modified_gmt": "2019-03-21T19:54:51",
     "discount_total": "0.00",
     "discount_tax": "0.00",
     "shipping_total": "10.00",
@@ -1304,8 +1304,8 @@ woocommerce.get("orders").parsed_response
     "transaction_id": "",
     "date_paid": null,
     "date_paid_gmt": null,
-    "date_completed": "2017-03-21T16:54:51",
-    "date_completed_gmt": "2017-03-21T19:54:51",
+    "date_completed": "2019-03-21T16:54:51",
+    "date_completed_gmt": "2019-03-21T19:54:51",
     "cart_hash": "5040ce7273261e31d8bcf79f9be3d279",
     "meta_data": [
       {
@@ -1558,10 +1558,10 @@ woocommerce.put("orders/727", data).parsed_response
   "version": "3.0.0",
   "status": "precessing",
   "currency": "USD",
-  "date_created": "2017-03-22T16:28:02",
-  "date_created_gmt": "2017-03-22T19:28:02",
-  "date_modified": "2017-03-22T16:30:35",
-  "date_modified_gmt": "2017-03-22T19:30:35",
+  "date_created": "2019-03-22T16:28:02",
+  "date_created_gmt": "2019-03-22T19:28:02",
+  "date_modified": "2019-03-22T16:30:35",
+  "date_modified_gmt": "2019-03-22T19:30:35",
   "discount_total": "0.00",
   "discount_tax": "0.00",
   "shipping_total": "10.00",
@@ -1601,10 +1601,10 @@ woocommerce.put("orders/727", data).parsed_response
   "payment_method": "bacs",
   "payment_method_title": "Direct Bank Transfer",
   "transaction_id": "",
-  "date_paid": "2017-03-22T16:28:08",
-  "date_paid_gmt": "2017-03-22T19:28:08",
-  "date_completed": "2017-03-22T16:30:35",
-  "date_completed_gmt": "2017-03-22T19:30:35",
+  "date_paid": "2019-03-22T16:28:08",
+  "date_paid_gmt": "2019-03-22T19:28:08",
+  "date_completed": "2019-03-22T16:30:35",
+  "date_completed_gmt": "2019-03-22T19:30:35",
   "cart_hash": "",
   "meta_data": [
     {
@@ -1781,10 +1781,10 @@ woocommerce.delete("orders/727", force: true).parsed_response
   "version": "3.0.0",
   "status": "completed",
   "currency": "USD",
-  "date_created": "2017-03-22T16:28:02",
-  "date_created_gmt": "2017-03-22T19:28:02",
-  "date_modified": "2017-03-22T16:30:35",
-  "date_modified_gmt": "2017-03-22T19:30:35",
+  "date_created": "2019-03-22T16:28:02",
+  "date_created_gmt": "2019-03-22T19:28:02",
+  "date_modified": "2019-03-22T16:30:35",
+  "date_modified_gmt": "2019-03-22T19:30:35",
   "discount_total": "0.00",
   "discount_tax": "0.00",
   "shipping_total": "10.00",
@@ -1824,10 +1824,10 @@ woocommerce.delete("orders/727", force: true).parsed_response
   "payment_method": "bacs",
   "payment_method_title": "Direct Bank Transfer",
   "transaction_id": "",
-  "date_paid": "2017-03-22T16:28:08",
-  "date_paid_gmt": "2017-03-22T19:28:08",
-  "date_completed": "2017-03-22T16:30:35",
-  "date_completed_gmt": "2017-03-22T19:30:35",
+  "date_paid": "2019-03-22T16:28:08",
+  "date_paid_gmt": "2019-03-22T19:28:08",
+  "date_completed": "2019-03-22T16:30:35",
+  "date_completed_gmt": "2019-03-22T19:30:35",
   "cart_hash": "",
   "meta_data": [
     {
@@ -2001,6 +2001,8 @@ Note: By default it's limited to up to 100 objects to be created, updated or del
 	</div>
 </div>
 
+> Example of Create, Update and Delete items in bulk:
+
 ```shell
 curl -X POST https://example.com/wp-json/wc/v3/orders/batch \
 	-u consumer_key:consumer_secret \
@@ -2035,16 +2037,34 @@ curl -X POST https://example.com/wp-json/wc/v3/orders/batch \
       "line_items": [
         {
           "product_id": 79,
-          "quantity": 1
+          "quantity": 1,
+          "mi_inventories": [
+            {
+              "inventory_id": 13,
+              "qty": 1
+            }
+          ] 
         },
         {
           "product_id": 93,
-          "quantity": 1
+          "quantity": 1,
+          "mi_inventories": [
+            {
+              "inventory_id": 14,
+              "qty": 1
+            }
+          ] 
         },
         {
           "product_id": 22,
           "variation_id": 23,
-          "quantity": 1
+          "quantity": 1,
+          "mi_inventories": [
+            {
+              "inventory_id": 58,
+              "qty": 1
+            }
+          ] 
         }
       ],
       "shipping_lines": [
@@ -2085,7 +2105,13 @@ curl -X POST https://example.com/wp-json/wc/v3/orders/batch \
         {
           "product_id": 22,
           "variation_id": 23,
-          "quantity": 1
+          "quantity": 1,
+          "mi_inventories": [
+            {
+              "inventory_id": 59,
+              "qty": 1
+            }
+          ] 
         },
         {
           "product_id": 22,
@@ -2104,8 +2130,19 @@ curl -X POST https://example.com/wp-json/wc/v3/orders/batch \
   ],
   "update": [
     {
-      "id": 727,
-      "shipping_methods": "Local Delivery"
+      "id": 1936,
+      "line_items": [
+        {
+          "id": 715,
+          "product_id": 93,
+          "mi_inventories": [
+            {
+              "inventory_id": 152,
+              "qty": 3
+            }
+          ]
+        }
+      ]
     }
   ],
   "delete": [
@@ -2145,16 +2182,34 @@ const data = {
       line_items: [
         {
           product_id: 79,
-          quantity: 1
+          quantity: 1,
+          mi_inventories: [
+            {
+              inventory_id: 13,
+              qty: 1
+            }
+          ] 
         },
         {
           product_id: 93,
-          quantity: 1
+          quantity: 1,
+          mi_inventories: [
+            {
+              inventory_id: 14,
+              qty: 1
+            }
+          ] 
         },
         {
           product_id: 22,
           variation_id: 23,
-          quantity: 1
+          quantity: 1,
+          mi_inventories: [
+            {
+              inventory_id: 58,
+              qty: 1
+            }
+          ] 
         }
       ],
       shipping_lines: [
@@ -2195,7 +2250,13 @@ const data = {
         {
           product_id: 22,
           variation_id: 23,
-          quantity: 1
+          quantity: 1,
+          mi_inventories: [
+            {
+              inventory_id: 59,
+              qty: 1
+            }
+          ]
         },
         {
           product_id: 22,
@@ -2214,8 +2275,19 @@ const data = {
   ],
   update: [
     {
-      id: 727,
-      shipping_methods: "Local Delivery"
+      id: 1936,
+      line_items: [
+        {
+          id: 715,
+          product_id: 93,
+          mi_inventories: [
+            {
+              inventory_id: 152,
+              qty: 3
+            }
+          ]
+        }
+      ]
     }
   ],
   delete: [
@@ -2264,16 +2336,34 @@ $data = [
             'line_items' => [
                 [
                     'product_id' => 79,
-                    'quantity' => 1
+                    'quantity' => 1,
+                    'mi_inventories' => [
+                        [
+                            'inventory_id' => 13,
+                            'qty' => 1
+                        ]
+                    ] 
                 ],
                 [
                     'product_id' => 93,
-                    'quantity' => 1
+                    'quantity' => 1,
+                    'mi_inventories' => [
+                        [
+                            'inventory_id' => 14,
+                            'qty' => 1
+                        ]
+                    ] 
                 ],
                 [
                     'product_id' => 22,
                     'variation_id' => 23,
-                    'quantity' => 1
+                    'quantity' => 1,
+                    'mi_inventories' => [
+                        [
+                            'inventory_id' => 58,
+                            'qty' => 1
+                        ]
+                    ] 
                 ]
             ],
             'shipping_lines' => [
@@ -2314,7 +2404,13 @@ $data = [
                 [
                     'product_id' => 22,
                     'variation_id' => 23,
-                    'quantity' => 1
+                    'quantity' => 1,
+                    'mi_inventories' => [
+                        [
+                            'inventory_id' => 59,
+                            'qty' => 1
+                        ]
+                    ] 
                 ],
                 [
                     'product_id' => 22,
@@ -2333,8 +2429,19 @@ $data = [
     ],
     'update' => [
         [
-            'id' => 727,
-            'shipping_methods' => 'Local Delivery'
+            'id' => 1936,
+            'line_items' => [
+                [
+                    'id' => 715,
+                    'product_id' => 93,
+                    'mi_inventories' => [
+                        [
+                            'inventory_id' => 152,
+                            'qty' => 3
+                        ]
+                    ]
+                ]
+            ]
         ]
     ],
     'delete' => [
@@ -2377,16 +2484,34 @@ data = {
             "line_items": [
                 {
                     "product_id": 79,
-                    "quantity": 1
+                    "quantity": 1,
+                    "mi_inventories": [
+                        {
+                          "inventory_id": 13,
+                          "qty": 1
+                        }
+                    ] 
                 },
                 {
                     "product_id": 93,
-                    "quantity": 1
+                    "quantity": 1,
+                    "mi_inventories": [
+                        {
+                          "inventory_id": 14,
+                          "qty": 1
+                        }
+                    ] 
                 },
                 {
                     "product_id": 22,
                     "variation_id": 23,
-                    "quantity": 1
+                    "quantity": 1,
+                    "mi_inventories": [
+                        {
+                          "inventory_id": 58,
+                          "qty": 1
+                        }
+                    ] 
                 }
             ],
             "shipping_lines": [
@@ -2427,7 +2552,13 @@ data = {
                 {
                     "product_id": 22,
                     "variation_id": 23,
-                    "quantity": 1
+                    "quantity": 1,
+                    "mi_inventories": [
+                        {
+                          "inventory_id": 59,
+                          "qty": 1
+                        }
+                    ] 
                 },
                 {
                     "product_id": 22,
@@ -2446,8 +2577,19 @@ data = {
     ],
     "update": [
         {
-            "id": 727,
-            "shipping_methods": "Local Delivery"
+            "id": 1936,
+            "line_items": [
+                {
+                    "id": 715,
+                    "product_id": 93,
+                    "mi_inventories": [
+                        {
+                            "inventory_id": 152,
+                            "qty": 3
+                        }
+                    ]
+                }
+            ]
         }
     ],
     "delete": [
@@ -2489,16 +2631,34 @@ data = {
       line_items: [
         {
           product_id: 79,
-          quantity: 1
+          quantity: 1,
+          mi_inventories: [
+            {
+              inventory_id: 13,
+              qty: 1
+            }
+          ] 
         },
         {
           product_id: 93,
-          quantity: 1
+          quantity: 1,
+          mi_inventories: [
+            {
+              inventory_id: 14,
+              qty: 1
+            }
+          ]
         },
         {
           product_id: 22,
           variation_id: 23,
-          quantity: 1
+          quantity: 1,
+          mi_inventories: [
+            {
+              inventory_id: 58,
+              qty: 1
+            }
+          ]
         }
       ],
       shipping_lines: [
@@ -2539,7 +2699,13 @@ data = {
         {
           product_id: 22,
           variation_id: 23,
-          quantity: 1
+          quantity: 1,
+          mi_inventories: [
+            {
+              inventory_id: 59,
+              qty: 1
+            }
+          ]
         },
         {
           product_id: 22,
@@ -2558,8 +2724,19 @@ data = {
   ],
   update: [
     {
-      id: 727,
-      shipping_methods: "Local Delivery"
+      id: 1936,
+      line_items: [
+        {
+          id: 715,
+          product_id: 93,
+          mi_inventories: [
+            {
+              inventory_id: 152,
+              qty: 3
+            }
+          ]
+        }
+      ]
     }
   ],
   delete: [
@@ -2576,7 +2753,7 @@ woocommerce.post("orders/batch", data).parsed_response
 {
   "create": [
     {
-      "id": 728,
+      "id": 1990,
       "parent_id": 0,
       "number": "728",
       "order_key": "wc_order_58d2d18e580",
@@ -2584,10 +2761,10 @@ woocommerce.post("orders/batch", data).parsed_response
       "version": "3.0.0",
       "status": "pending",
       "currency": "USD",
-      "date_created": "2017-03-22T16:33:34",
-      "date_created_gmt": "2017-03-22T19:33:34",
-      "date_modified": "2017-03-22T16:33:34",
-      "date_modified_gmt": "2017-03-22T19:33:34",
+      "date_created": "2019-03-22T16:33:34",
+      "date_created_gmt": "2019-03-22T19:33:34",
+      "date_modified": "2019-03-22T16:33:34",
+      "date_modified_gmt": "2019-03-22T19:33:34",
       "discount_total": "0.00",
       "discount_tax": "0.00",
       "shipping_total": "30.00",
@@ -2654,7 +2831,19 @@ woocommerce.post("orders/batch", data).parsed_response
           ],
           "meta_data": [],
           "sku": "",
-          "price": 15
+          "price": 15,
+          "mi_inventories": [
+            {
+              "id": 180,
+              "inventory_id": 13,
+              "qty": 1,
+              "subtotal": 15,
+              "total": 15,
+              "refund_qty": 0,
+              "refund_total": 0
+            }
+          ],
+          "bom_items": [] 
         },
         {
           "id": 320,
@@ -2676,7 +2865,19 @@ woocommerce.post("orders/batch", data).parsed_response
           ],
           "meta_data": [],
           "sku": "",
-          "price": 3
+          "price": 3,
+          "mi_inventories": [
+            {
+              "id": 181,
+              "inventory_id": 14,
+              "qty": 1,
+              "subtotal": 3,
+              "total": 3,
+              "refund_qty": 0,
+              "refund_total": 0
+            }
+          ],
+          "bom_items": [] 
         },
         {
           "id": 321,
@@ -2709,7 +2910,19 @@ woocommerce.post("orders/batch", data).parsed_response
             }
           ],
           "sku": "Bar3",
-          "price": 12
+          "price": 12,
+          "mi_inventories": [
+            {
+              "id": 182,
+              "inventory_id": 58,
+              "qty": 1,
+              "subtotal": 12,
+              "total": 12,
+              "refund_qty": 0,
+              "refund_total": 0
+            }
+          ],
+          "bom_items": [] 
         }
       ],
       "tax_lines": [
@@ -2752,7 +2965,7 @@ woocommerce.post("orders/batch", data).parsed_response
       }
     },
     {
-      "id": 729,
+      "id": 1991,
       "parent_id": 0,
       "number": "729",
       "order_key": "wc_order_58d2d196171",
@@ -2760,10 +2973,10 @@ woocommerce.post("orders/batch", data).parsed_response
       "version": "3.0.0",
       "status": "processing",
       "currency": "USD",
-      "date_created": "2017-03-22T16:33:42",
-      "date_created_gmt": "2017-03-22T19:33:42",
-      "date_modified": "2017-03-22T16:33:47",
-      "date_modified_gmt": "2017-03-22T19:33:47",
+      "date_created": "2019-03-22T16:33:42",
+      "date_created_gmt": "2019-03-22T19:33:42",
+      "date_modified": "2019-03-22T16:33:47",
+      "date_modified_gmt": "2019-03-22T19:33:47",
       "discount_total": "0.00",
       "discount_tax": "0.00",
       "shipping_total": "20.00",
@@ -2803,8 +3016,8 @@ woocommerce.post("orders/batch", data).parsed_response
       "payment_method": "bacs",
       "payment_method_title": "Direct Bank Transfer",
       "transaction_id": "",
-      "date_paid": "2017-03-22T16:33:47",
-      "date_paid_gmt": "2017-03-22T19:33:47",
+      "date_paid": "2019-03-22T16:33:47",
+      "date_paid_gmt": "2019-03-22T19:33:47",
       "date_completed": null,
       "date_completed_gmt": null,
       "cart_hash": "",
@@ -2847,7 +3060,19 @@ woocommerce.post("orders/batch", data).parsed_response
             }
           ],
           "sku": "Bar3",
-          "price": 12
+          "price": 12,
+          "mi_inventories": [
+            {
+              "id": 183,
+              "inventory_id": 59,
+              "qty": 1,
+              "subtotal": 12,
+              "total": 12,
+              "refund_qty": 0,
+              "refund_total": 0
+            }
+          ],
+          "bom_items": [] 
         },
         {
           "id": 325,
@@ -2880,7 +3105,9 @@ woocommerce.post("orders/batch", data).parsed_response
             }
           ],
           "sku": "",
-          "price": 20
+          "price": 20,
+          "mi_inventories": [],
+          "bom_items": []
         }
       ],
       "tax_lines": [
@@ -2925,7 +3152,7 @@ woocommerce.post("orders/batch", data).parsed_response
   ],
   "update": [
     {
-      "id": 727,
+      "id": 1936,
       "parent_id": 0,
       "number": "727",
       "order_key": "wc_order_58d2d042d1d",
@@ -2933,10 +3160,10 @@ woocommerce.post("orders/batch", data).parsed_response
       "version": "3.0.0",
       "status": "completed",
       "currency": "USD",
-      "date_created": "2017-03-22T16:28:02",
-      "date_created_gmt": "2017-03-22T19:28:02",
-      "date_modified": "2017-03-22T16:30:35",
-      "date_modified_gmt": "2017-03-22T19:30:35",
+      "date_created": "2019-03-22T16:28:02",
+      "date_created_gmt": "2019-03-22T19:28:02",
+      "date_modified": "2019-03-22T16:30:35",
+      "date_modified_gmt": "2019-03-22T19:30:35",
       "discount_total": "0.00",
       "discount_tax": "0.00",
       "shipping_total": "10.00",
@@ -2976,10 +3203,10 @@ woocommerce.post("orders/batch", data).parsed_response
       "payment_method": "bacs",
       "payment_method_title": "Direct Bank Transfer",
       "transaction_id": "",
-      "date_paid": "2017-03-22T16:28:08",
-      "date_paid_gmt": "2017-03-22T19:28:08",
-      "date_completed": "2017-03-22T16:30:35",
-      "date_completed_gmt": "2017-03-22T19:30:35",
+      "date_paid": "2019-03-22T16:28:08",
+      "date_paid_gmt": "2019-03-22T19:28:08",
+      "date_completed": "2019-03-22T16:30:35",
+      "date_completed_gmt": "2019-03-22T19:30:35",
       "cart_hash": "",
       "meta_data": [
         {
@@ -2995,15 +3222,15 @@ woocommerce.post("orders/batch", data).parsed_response
       ],
       "line_items": [
         {
-          "id": 315,
+          "id": 715,
           "name": "Woo Single #1",
           "product_id": 93,
           "variation_id": 0,
           "quantity": 2,
           "tax_class": "",
-          "subtotal": "6.00",
+          "subtotal": "18.00",
           "subtotal_tax": "0.45",
-          "total": "6.00",
+          "total": "18.00",
           "total_tax": "0.45",
           "taxes": [
             {
@@ -3014,7 +3241,19 @@ woocommerce.post("orders/batch", data).parsed_response
           ],
           "meta_data": [],
           "sku": "",
-          "price": 3
+          "price": 3,
+          "mi_inventories": [
+            {
+              "id": 191,
+              "inventory_id": 152,
+              "qty": 3,
+              "subtotal": 18,
+              "total": 18,
+              "refund_qty": 0,
+              "refund_total": 0
+            }
+          ],
+          "bom_items": []
         },
         {
           "id": 316,
@@ -3047,7 +3286,9 @@ woocommerce.post("orders/batch", data).parsed_response
             }
           ],
           "sku": "Bar3",
-          "price": 12
+          "price": 12,
+          "mi_inventories": [],
+          "bom_items": []
         }
       ],
       "tax_lines": [
@@ -3100,10 +3341,10 @@ woocommerce.post("orders/batch", data).parsed_response
       "version": "3.0.0",
       "status": "completed",
       "currency": "USD",
-      "date_created": "2017-03-21T16:16:00",
-      "date_created_gmt": "2017-03-21T19:16:00",
-      "date_modified": "2017-03-21T16:54:51",
-      "date_modified_gmt": "2017-03-21T19:54:51",
+      "date_created": "2019-03-21T16:16:00",
+      "date_created_gmt": "2019-03-21T19:16:00",
+      "date_modified": "2019-03-21T16:54:51",
+      "date_modified_gmt": "2019-03-21T19:54:51",
       "discount_total": "0.00",
       "discount_tax": "0.00",
       "shipping_total": "10.00",
@@ -3145,8 +3386,8 @@ woocommerce.post("orders/batch", data).parsed_response
       "transaction_id": "",
       "date_paid": null,
       "date_paid_gmt": null,
-      "date_completed": "2017-03-21T16:54:51",
-      "date_completed_gmt": "2017-03-21T19:54:51",
+      "date_completed": "2019-03-21T16:54:51",
+      "date_completed_gmt": "2019-03-21T19:54:51",
       "cart_hash": "5040ce7273261e31d8bcf79f9be3d279",
       "meta_data": [
         {
@@ -3170,7 +3411,9 @@ woocommerce.post("orders/batch", data).parsed_response
           "taxes": [],
           "meta_data": [],
           "sku": "",
-          "price": 9
+          "price": 9,
+          "mi_inventories": [],
+          "bom_items": []
         },
         {
           "id": 313,
@@ -3186,7 +3429,9 @@ woocommerce.post("orders/batch", data).parsed_response
           "taxes": [],
           "meta_data": [],
           "sku": "",
-          "price": 20
+          "price": 20,
+          "mi_inventories": [],
+          "bom_items": []
         }
       ],
       "tax_lines": [],

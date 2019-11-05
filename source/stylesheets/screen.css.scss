@@ -531,10 +531,8 @@ html, body {
 	pre, blockquote {
 		background-color: $code-bg;
 		color: #fff;
-		
 		margin: 0;
 		width: $examples-width;
-		
 		float: right;
 		clear: right;
 		
@@ -555,8 +553,6 @@ html, body {
 	
 	pre {
 		@extend %code-font;
-		padding-top: 2em;
-		padding-bottom: 2em;
 		padding: 2em $main-padding;
 	}
 	
