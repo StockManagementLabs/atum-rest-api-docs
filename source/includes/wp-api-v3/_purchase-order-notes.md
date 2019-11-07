@@ -1,4 +1,4 @@
-# Order notes #
+# Purchase order notes #
 
 The order notes API allows you to create, view, and delete individual order notes.  
 Order notes are added by administrators and programmatically to store data about an order, or order events.

@@ -21,10 +21,10 @@ includes:
   - wp-api-v3/authentication
   - wp-api-v3/index
   - wp-api-v3/orders
-  - wp-api-v3/order-notes 
   - wp-api-v3/products
   - wp-api-v3/product-variations  
   - wp-api-v3/product-categories  
+  - wp-api-v3/purchase-order-notes 
   - wp-api-v3/reports 
   - wp-api-v3/settings
   - wp-api-v3/setting-options  
