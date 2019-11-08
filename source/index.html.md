@@ -20,10 +20,11 @@ includes:
   - wp-api-v3/introduction
   - wp-api-v3/authentication
   - wp-api-v3/index
+  - wp-api-v3/dashboard
   - wp-api-v3/orders
   - wp-api-v3/products
   - wp-api-v3/product-variations  
-  - wp-api-v3/atum-locations  
+  - wp-api-v3/product-locations  
   - wp-api-v3/purchase-order-notes 
   - wp-api-v3/reports 
   - wp-api-v3/settings
