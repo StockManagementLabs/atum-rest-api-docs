@@ -21,12 +21,12 @@ includes:
   - wp-api-v3/authentication
   - wp-api-v3/index
   - wp-api-v3/dashboard
+  - wp-api-v3/inbound-stock
   - wp-api-v3/orders
   - wp-api-v3/products
   - wp-api-v3/product-variations  
   - wp-api-v3/product-locations  
   - wp-api-v3/purchase-order-notes 
-  - wp-api-v3/reports 
   - wp-api-v3/settings
   - wp-api-v3/setting-options  
   - wp-api-v3/system-status
