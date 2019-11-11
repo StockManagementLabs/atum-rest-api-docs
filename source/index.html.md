@@ -20,6 +20,7 @@ includes:
   - wp-api-v3/introduction
   - wp-api-v3/authentication
   - wp-api-v3/index
+  - wp-api-v3/add-ons
   - wp-api-v3/dashboard
   - wp-api-v3/inbound-stock
   - wp-api-v3/orders
