@@ -33,6 +33,7 @@ includes:
   - wp-api-v3/purchase-order-notes 
   - wp-api-v3/settings
   - wp-api-v3/setting-options  
+  - wp-api-v3/suppliers  
   - wp-api-v3/system-status
   - wp-api-v3/system-status-tools
   - wp-api-v3/data
