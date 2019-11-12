@@ -1,4 +1,4 @@
-# Inbound stock <i class="label label-atum">ATUM</i> #
+# <i class="label label-atum">ATUM</i> Inbound stock #
 
 The inbound stock API allows you to view the products that are set within pending purchase orders.
 

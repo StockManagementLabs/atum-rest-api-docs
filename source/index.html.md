@@ -29,6 +29,7 @@ includes:
   - wp-api-v3/products
   - wp-api-v3/product-variations  
   - wp-api-v3/product-locations  
+  - wp-api-v3/purchase-orders 
   - wp-api-v3/purchase-order-notes 
   - wp-api-v3/settings
   - wp-api-v3/setting-options  

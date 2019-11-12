@@ -1,4 +1,4 @@
-# Inventory log notes <i class="label label-atum">ATUM</i> #
+# <i class="label label-atum">ATUM</i> Inventory log notes #
 
 The inventory log notes API allows you to create, view, and delete individual inventory log notes.  
 Inventory log notes are added by administrators and programmatically to store data about an inventory log, or its events.
@@ -81,7 +81,7 @@ woocommerce.post("atum/inventory-logs/713/notes", data).parsed_response
 ```json
 {
     "id": 4202,
-    "author": "ATUM",
+    "author": "John Doe",
     "date_created": "2019-11-11T13:27:10",
     "date_created_gmt": "2019-11-11T12:27:10",
     "note": "Test Note!!!",
@@ -151,7 +151,7 @@ woocommerce.get("atum/inventory-logs/713/notes/4202").parsed_response
 ```json
 {
     "id": 4202,
-    "author": "ATUM",
+    "author": "John Doe",
     "date_created": "2019-11-11T13:27:10",
     "date_created_gmt": "2019-11-11T12:27:10",
     "note": "Test Note!!!",
@@ -247,11 +247,11 @@ woocommerce.get("atum/inventory-logs/493/notes").parsed_response
     },
     {
         "id": 589,
-        "author": "John Doe",
+        "author": "ATUM",
         "date_created": "2019-03-05T11:17:16",
         "date_created_gmt": "2019-03-05T11:17:16",
         "note": "Order status changed from Completed to Pending.",
-        "added_by_user": true,
+        "added_by_user": false,
         "_links": {
             "self": [
                 {
@@ -272,11 +272,11 @@ woocommerce.get("atum/inventory-logs/493/notes").parsed_response
     },
     {
         "id": 588,
-        "author": "John Doe",
+        "author": "ATUM",
         "date_created": "2019-03-05T11:16:26",
         "date_created_gmt": "2019-03-05T11:16:26",
         "note": "Order status changed from Pending to Completed.",
-        "added_by_user": true,
+        "added_by_user": false,
         "_links": {
             "self": [
                 {
@@ -297,11 +297,11 @@ woocommerce.get("atum/inventory-logs/493/notes").parsed_response
     },
     {
         "id": 274,
-        "author": "John Doe",
+        "author": "ATUM",
         "date_created": "2018-04-04T07:26:35",
         "date_created_gmt": "2018-04-04T06:26:35",
         "note": "Item 24 stock increased from 4 to 5.",
-        "added_by_user": true,
+        "added_by_user": false,
         "_links": {
             "self": [
                 {
@@ -322,11 +322,11 @@ woocommerce.get("atum/inventory-logs/493/notes").parsed_response
     },
     {
         "id": 266,
-        "author": "John Doe",
+        "author": "ATUM",
         "date_created": "2018-03-14T11:32:20",
         "date_created_gmt": "2018-03-14T11:32:20",
         "note": "Item 24 stock increased from 3 to 4.",
-        "added_by_user": true,
+        "added_by_user": false,
         "_links": {
             "self": [
                 {
@@ -347,11 +347,11 @@ woocommerce.get("atum/inventory-logs/493/notes").parsed_response
     },
     {
         "id": 255,
-        "author": "John Doe",
+        "author": "ATUM",
         "date_created": "2018-03-06T08:04:30",
         "date_created_gmt": "2018-03-06T08:04:30",
         "note": "Item 24 stock decreased from 2 to 1.",
-        "added_by_user": true,
+        "added_by_user": false,
         "_links": {
             "self": [
                 {
@@ -372,11 +372,11 @@ woocommerce.get("atum/inventory-logs/493/notes").parsed_response
     },
     {
         "id": 254,
-        "author": "John Doe",
+        "author": "ATUM",
         "date_created": "2018-03-06T08:04:12",
         "date_created_gmt": "2018-03-06T08:04:12",
         "note": "Item 24 stock increased from 1 to 2.",
-        "added_by_user": true,
+        "added_by_user": false,
         "_links": {
             "self": [
                 {

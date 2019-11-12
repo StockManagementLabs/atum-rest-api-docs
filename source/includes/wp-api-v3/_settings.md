@@ -1,4 +1,4 @@
-# Settings #
+# <i class="label label-atum">ATUM</i> Settings #
 
 The settings API allows you to view all groups of settings available.
 
