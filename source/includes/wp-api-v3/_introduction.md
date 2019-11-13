@@ -14,9 +14,9 @@ The following table shows API versions present in each major version of WooComme
 Older WC REST API versions are not supported by ATUM.
 </aside>
 
-These API Docs are restricted to ATUM data, if you want to see docs for the other WC endpoints, we suggest you read the [WC REST API Docs](https://woocommerce.github.io/woocommerce-rest-api-docs/).
+These API Docs are restricted to ATUM data, if you want to read docs for the other WC endpoints, we suggest you read the [WC REST API Docs](https://woocommerce.github.io/woocommerce-rest-api-docs/).
 
-Some of the endpoints described on these docs are just the ones described in the WC's official API docs but with extra info regarding ATUM data. The data added by ATUM to the WC endpoints can be identified in these docs with the label: <i class="label label-atum inline">ATUM</i>.
+Some of the endpoints described on these docs are just the ones described in the WC's official API docs but with extra info regarding ATUM data. The data added by ATUM to the official WC's endpoints can be identified in these docs with the label: <i class="label label-atum inline">ATUM</i>.
 
 There is info described here that it's ony available when some of the ATUM's premium add-ons are active. We'll identify them with orange labels like <i class="label label-addon inline">Multi-Inventory</i> or <i class="label label-addon inline">Product Levels</i>.
 

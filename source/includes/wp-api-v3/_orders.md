@@ -1,5 +1,8 @@
 # Orders #
 
+This endpoint is an extension of the official WC's orders enndpoint with extra info added by ATUM and/or its add-ons. 
+You can identify the ATUM data with the corresponding labels.
+
 The orders API allows you to create, view, update, and delete individual, or a batch, of orders.
 
 ## Order properties ##

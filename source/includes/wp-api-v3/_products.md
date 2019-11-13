@@ -1,5 +1,8 @@
 # Products #
 
+This endpoint is an extension of the official WC's orders enndpoint with extra info added by ATUM and/or its add-ons. 
+You can identify the ATUM data with the corresponding labels.
+
 The products API allows you to create, view, update, and delete individual, or a batch, of products.
 
 ## Product properties ##

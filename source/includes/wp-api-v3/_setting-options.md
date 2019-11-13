@@ -1,4 +1,4 @@
-# <i class="label label-atum">ATUM</i> Setting options #
+# Setting options #
 
 ## Setting option properties ##
 

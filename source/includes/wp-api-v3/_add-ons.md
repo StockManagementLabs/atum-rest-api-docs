@@ -1,4 +1,4 @@
-# <i class="label label-atum">ATUM</i> Add-ons #
+# Add-ons #
 
 The add-ons API allows you to view the installed ATUM add-ons and their licenses.
 

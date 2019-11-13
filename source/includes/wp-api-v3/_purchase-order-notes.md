@@ -1,4 +1,4 @@
-# <i class="label label-atum">ATUM</i> Purchase order notes #
+# Purchase order notes #
 
 The purchase order notes API allows you to create, view, and delete individual purchase order notes.  
 Purchase order notes are added by administrators and programmatically to store data about a purchase order, or its events.

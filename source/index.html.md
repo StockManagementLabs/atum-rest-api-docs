@@ -9,10 +9,9 @@ language_tabs:
   - ruby: Ruby
 
 toc_footers:
-  - <a href="https://github.com/StockManagementLabs/atum-rest-api-docs">Contributing to ATUM REST API Docs</a>
-  - <a href="https://github.com/StockManagementLabs/atum-rest-api-docs/tree/master/includes/api">REST API Source on GitHub</a>
-  - <a href="https://github.com/StockManagementLabs/atum-rest-api-docs/issues?labels=API&amp;page=1&amp;state=open">REST API Issues</a>
+  - <a href="https://github.com/StockManagementLabs/atum-rest-api-docs">REST API Docs on GitHub</a>
   - <a href="https://forum.stockmanagementlabs.com/t/atum-documentation">ATUM Documentation</a>
+  - <a href="https://woocommerce.github.io/woocommerce-rest-api-docs">WooCommerce APi Docs</a>
   - <a href="https://github.com/StockManagementLabs/atum-stock-manager-for-woocommerce">ATUM Repository</a>
   - <a href="https://github.com/tripit/slate">Documentation Powered by Slate</a>
 
@@ -34,9 +33,7 @@ includes:
   - wp-api-v3/settings
   - wp-api-v3/setting-options  
   - wp-api-v3/suppliers  
-  - wp-api-v3/system-status
-  - wp-api-v3/system-status-tools
-  - wp-api-v3/data
+  - wp-api-v3/tools
 
 search: false
 ---
