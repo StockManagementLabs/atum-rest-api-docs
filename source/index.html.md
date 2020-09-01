@@ -22,6 +22,7 @@ includes:
   - wp-api-v3/add-ons
   - wp-api-v3/dashboard
   - wp-api-v3/inbound-stock
+  - wp-api-v3/inventories
   - wp-api-v3/inventory-logs
   - wp-api-v3/inventory-log-notes
   - wp-api-v3/orders

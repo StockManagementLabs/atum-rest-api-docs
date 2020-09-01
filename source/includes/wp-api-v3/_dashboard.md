@@ -1,5 +1,7 @@
 # Dashboard #
 
+<i class="label label-atum">ATUM</i>
+
 The dashboard API allows you to get all types of ATUM Dashboard widgets available.
 
 ## List all widgets ##

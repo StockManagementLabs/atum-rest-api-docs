@@ -275,12 +275,12 @@ woocommerce = WooCommerce::API.new(
 	Note that we don't offer support for WooCommerce libraries nor third party libraries, so if you have questions about how use any of this libraries you should contact the respective authors.
 </aside>
 
-### Tools ###
+### API Tools ###
 
 Some useful tools you can use to access the API include:
 
-- [Insomnia](https://insomnia.rest) - Cross-platform GraphQL and REST client, available for Mac, Windows, and Linux.
 - [Postman](https://www.getpostman.com/) - Cross-platform REST client, available for Mac, Windows, and Linux.
+- [Insomnia](https://insomnia.rest) - Cross-platform GraphQL and REST client, available for Mac, Windows, and Linux.
 - [RequestBin](https://requestbin.com) - Allows you test webhooks.
 - [Hookbin](https://hookbin.com/) - Another tool to test webhooks.
 

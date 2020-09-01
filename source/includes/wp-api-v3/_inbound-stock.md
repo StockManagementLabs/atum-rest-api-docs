@@ -1,5 +1,7 @@
 # Inbound stock #
 
+<i class="label label-atum">ATUM</i>
+
 The inbound stock API allows you to view the products that are set within pending purchase orders.
 
 ## Product properties ##
@@ -17,7 +19,7 @@ The inbound stock API allows you to view the products that are set within pendin
 | `date_expected_gmt`     | date-time | The date when the Purchase Order is expected, as GMT. <i class="label label-info">read-only</i>                                                                                                                         |
 | `purchase_order`        | integer   | Unique identifier for the Purchase Order. <i class="label label-info">read-only</i>                                                                                                                                     |
 
-## Retrieve a product ##
+## Retrieve an inbound product ##
 
 This API lets you retrieve and view a the inbound stock for a specific product by ID.
 
@@ -112,9 +114,9 @@ woocommerce.get("atum/inbound-stock/175").parsed_response
 ]
 ```
 
-## List all products ##
+## List all inbound products ##
 
-This API helps you to view all the products.
+This API helps you to view all the inbound products.
 
 ### HTTP request ###
 

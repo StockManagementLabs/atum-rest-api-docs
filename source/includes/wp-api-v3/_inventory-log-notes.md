@@ -1,5 +1,7 @@
 # Inventory log notes #
 
+<i class="label label-atum">ATUM</i>
+
 The inventory log notes API allows you to create, view, and delete individual inventory log notes.  
 Inventory log notes are added by administrators and programmatically to store data about an inventory log, or its events.
 

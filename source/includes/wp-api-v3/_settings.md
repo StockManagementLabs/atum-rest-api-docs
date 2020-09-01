@@ -1,5 +1,7 @@
 # Settings #
 
+<i class="label label-atum">ATUM</i>
+
 The settings API allows you to view all groups of ATUM settings available.
 
 ## Setting group properties ##

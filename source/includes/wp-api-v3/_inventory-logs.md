@@ -1,5 +1,7 @@
 # Inventory logs #
 
+<i class="label label-atum">ATUM</i>
+
 The inventory logs API allows you to create, view, update, and delete individual, or a batch, of inventory logs.
 
 ## Inventory log properties ##

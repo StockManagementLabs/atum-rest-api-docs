@@ -1,5 +1,7 @@
 # Product locations #
 
+<i class="label label-atum">ATUM</i>
+
 The ATUM product locations API allows you to create, view, update, and delete individual, or a batch, of locations.
 
 ## Product location properties ##

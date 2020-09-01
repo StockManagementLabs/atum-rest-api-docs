@@ -1,5 +1,7 @@
 # Setting options #
 
+<i class="label label-atum">ATUM</i>
+
 ## Setting option properties ##
 
 | Attribute     | Type   | Description                                                                                                                                                                                                  |

@@ -1,5 +1,7 @@
 # Tools #
 
+<i class="label label-atum">ATUM</i>
+
 The ATUM tools API allows you to view and run tools.
 
 ## Tool properties ##
