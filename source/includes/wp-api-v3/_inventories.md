@@ -15,7 +15,7 @@ The ATUM inventories API allows you to create, view, update, and delete inventor
 | `is_main`          | boolean   | Whether the current inventory is the main inventory.                                                                   |
 | `inventory_date`   | date-time | The date the inventory was created, as GMT.                                                                            |
 | `lot`              | string    | The LOT/BATCH number.                                                                                                  |
-| `wtite_off`        | boolean   | Number of published products for the resource.                                                                         |
+| `write_off`        | boolean   | Number of published products for the resource.                                                                         |
 | `region`           | array     | If the region restriction mode is enabled, it'll show the list of countries or shipping zones linked to the inventory. |
 | `location`         | array     | ATUM Location(s) linked to the inventory.                                                                              |
 | `bbe_date`         | date-time | The Best-Before-Expiry date for the inventory, as GMT.                                                                 |
