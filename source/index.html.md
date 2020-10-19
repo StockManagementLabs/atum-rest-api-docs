@@ -9,11 +9,13 @@ language_tabs: # must be one of https://git.io/vQNgJ
   - ruby: Ruby
 
 toc_footers:
-   - <a href="https://github.com/StockManagementLabs/atum-rest-api-docs">REST API Docs on GitHub</a>
-   - <a href="https://forum.stockmanagementlabs.com/t/atum-documentation">ATUM Documentation</a>
-   - <a href="https://woocommerce.github.io/woocommerce-rest-api-docs">WooCommerce REST API Docs</a>
-   - <a href="https://github.com/StockManagementLabs/atum-stock-manager-for-woocommerce">ATUM Repository</a>
-   - <a href="https://github.com/tripit/slate">Documentation Powered by Slate</a>
+   - <a href="https://wordpress.org/plugins/atum-stock-manager-for-woocommerce/" target="_blank">ATUM plugin page</a>
+   - <a href="https://www.stockmanagementlabs.com/addons/" target="_blank">ATUM add-ons</a>
+   - <a href="https://forum.stockmanagementlabs.com/t/atum-documentation" target="_blank">ATUM Documentation</a>
+   - <a href="https://github.com/StockManagementLabs/atum-stock-manager-for-woocommerce" target="_blank">ATUM Repository</a>
+   - <a href="https://woocommerce.github.io/woocommerce-rest-api-docs" target="_blank">WooCommerce REST API Docs</a>
+   - <br>
+   - <small><a href="https://github.com/tripit/slate" target="_blank">Documentation Powered by Slate</a></small>
 
 includes:
   - wp-api-v3/introduction
