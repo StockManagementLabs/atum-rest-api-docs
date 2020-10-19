@@ -2,56 +2,56 @@
 // LABEL
 ////////////////////////////////////////////////////////////////////////////////
 .label {
-	border-radius: 2px;
-	text-transform: uppercase;
-	font-style: normal;
-	white-space: nowrap;
+  border-radius: 2px;
+  text-transform: uppercase;
+  font-style: normal;
+  white-space: nowrap;
   vertical-align: middle;
-  
+
   &.inline {
     display: inline-block;
   }
 }
 
 .label-get {
-	background: #008000;
+  background: #008000;
 }
 
 .label-post,
 .label-put {
-	background: #4e92d7;
+  background: #4e92d7;
 }
 
 .label-delete {
-	background: #ca4949;
+  background: #ca4949;
 }
 
 .label-info, .label-atum, .label-addon {
-	font-weight: 700;
-	font-size: 70%;
-	padding: 2px 4px;
-	margin-left: 5px;
+  font-weight: 700;
+  font-size: 70%;
+  padding: 2px 4px;
+  margin-left: 5px;
 }
 
 table {
-	td {
-		.label-info, .label-atum, .label-addon {
-			float: right;
-		}
-	}
+  td {
+    .label-info, .label-atum, .label-addon {
+      float: right;
+    }
+  }
 }
 
 .label-info {
-	background: #efefef;
-	color: #999;
+  background: #efefef;
+  color: #999;
 }
 
 .label-atum {
-	background: #00B8DB;
-	color: #FFF;
+  background: #00B8DB;
+  color: #FFF;
 }
 
 .label-addon {
-	background: #EFAF00;
-	color: #FFF;
+  background: #EFAF00;
+  color: #FFF;
 }

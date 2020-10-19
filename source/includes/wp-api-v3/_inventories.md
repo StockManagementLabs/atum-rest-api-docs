@@ -504,19 +504,270 @@ woocommerce.get("products/507/inventories").parsed_response
 
 | Parameter           | Type    | Description                                                                                                                                 |
 |---------------------|---------|---------------------------------------------------------------------------------------------------------------------------------------------|
-| `context`           | string  | Scope under which the request is made; determines fields present in response. Options: `view` and `edit`. Default is `view`.                |
 | `after`             | string  | Limit response to resources created after a given ISO8601 compliant date.                                                                   |
 | `before`            | string  | Limit response to resources created before a given ISO8601 compliant date.                                                                  |
 | `exclude`           | array   | Ensure result set excludes specific IDs.                                                                                                    |
 | `include`           | array   | Limit result set excludes specific IDs.                                                                                                     |
-| `offset`            | array   | Offset the result set by a specific number of items.                                                                                        |
-| `order`             | array   | Order sort attribute ascending or descending. Options: `asc` and `desc`. Default is `asc`.                                                  |
-| `orderby`           | array   | Sort collection by object attribute. Options: `priority`, `inventory_date`, `id`, `name` and `bbe_date` and `desc`. Default is `priority`.  |
+| `offset`            | integer | Offset the result set by a specific number of items.                                                                                        |
+| `order`             | string  | Order sort attribute ascending or descending. Options: `asc` and `desc`. Default is `asc`.                                                  |
+| `orderby`           | string  | Sort collection by object attribute. Options: `priority`, `inventory_date`, `id`, `name` and `bbe_date`. Default is `priority`.             |
 | `name`              | string  | Limit result set to inventories with a specific name.                                                                                       |
 | `exclude_write_off` | boolean | Exclude from result set the inventories that were marked as 'write off'. Default is `true`.                                                 |
 | `lot`               | string  | Limit result set to inventories with the specified LOT/BATCH number.                                                                        |
 | `countries`         | string  | If the country restriction mode is enabled, limit the result set to inventories linked to the specified country.                            |
 | `shipping_zone`     | string  | If the shipping zone restriction mode is enabled, limit the result set to inventories linked to the specified shipping zone.                |
+
+## List all the inventories ##
+
+This API lets you retrieve all the inventories registered on the system.
+
+<div class="api-endpoint">
+	<div class="endpoint-data">
+		<i class="label label-get">GET</i>
+		<h6>/wp-json/wc/v3/inventories</h6>
+	</div>
+</div>
+
+```shell
+curl https://example.com/wp-json/wc/v3/inventories \
+	-u consumer_key:consumer_secret
+```
+
+```javascript
+WooCommerce.get("inventories")
+  .then((response) => {
+    console.log(response.data);
+  })
+  .catch((error) => {
+    console.log(error.response.data);
+  });
+```
+
+```php
+<?php print_r($woocommerce->get('inventories')); ?>
+```
+
+```python
+print(wcapi.get("inventories").json())
+```
+
+```ruby
+woocommerce.get("inventories").parsed_response
+```
+
+> JSON response example:
+
+```json
+[
+    {
+        "id": "3",
+        "product_id": 90,
+        "name": "Custom Inventory",
+        "priority": 5,
+        "is_main": false,
+        "inventory_date": "2018-10-25T10:10:00",
+        "lot": "",
+        "write_off": false,
+        "region": "",
+        "location": [],
+        "bbe_date": null,
+        "expiry_days": 0,
+        "inbound_stock": "0",
+        "stock_on_hold": 17,
+        "sold_today": 0,
+        "sales_last_days": 0,
+        "reserved_stock": 0,
+        "customer_returns": 0,
+        "warehouse_damage": 0,
+        "lost_in_post": 0,
+        "other_logs": 0,
+        "out_stock_days": 0,
+        "lost_sales": 0,
+        "update_date": "2020-10-05T07:20:52",
+        "meta_data": {
+            "sku": "WOO3",
+            "manage_stock": true,
+            "stock_quantity": 3,
+            "backorders": "no",
+            "stock_status": "instock",
+            "supplier_id": 399,
+            "supplier_sku": "SUPSK1",
+            "sold_individually": false,
+            "out_stock_threshold": "",
+            "purchase_price": "18.9",
+            "price": "15.7",
+            "regular_price": "15.7",
+            "sale_price": "",
+            "date_on_sale_from": null,
+            "date_on_sale_to": null,
+            "out_stock_date": null,
+            "expired_stock": null
+        },
+        "_links": {
+            "self": [
+                {
+                    "href": "http://example.com/wp-json/wc/v3/products/90/inventories/3"
+                }
+            ],
+            "collection": [
+                {
+                    "href": "http://example.com/wp-json/wc/v3/products/90/inventories"
+                }
+            ],
+            "up": [
+                {
+                    "href": "http://example.com/wp-json/wc/v3/products/90"
+                }
+            ]
+        }
+    },
+    {
+        "id": "7",
+        "product_id": 83,
+        "name": "Main Inventory",
+        "priority": 0,
+        "is_main": true,
+        "inventory_date": "2018-10-25T10:10:24",
+        "lot": "",
+        "write_off": false,
+        "region": "",
+        "location": [],
+        "bbe_date": "-0001-11-30T00:00:00",
+        "expiry_days": 0,
+        "inbound_stock": "0",
+        "stock_on_hold": 0,
+        "sold_today": 0,
+        "sales_last_days": 0,
+        "reserved_stock": 0,
+        "customer_returns": 0,
+        "warehouse_damage": 0,
+        "lost_in_post": 0,
+        "other_logs": 0,
+        "out_stock_days": 108,
+        "lost_sales": 0,
+        "update_date": "2020-10-05T07:20:53",
+        "meta_data": {
+            "sku": "",
+            "manage_stock": true,
+            "stock_quantity": 0,
+            "backorders": "no",
+            "stock_status": "instock",
+            "supplier_id": "",
+            "supplier_sku": "",
+            "sold_individually": false,
+            "out_stock_threshold": 0,
+            "purchase_price": "128",
+            "price": "9",
+            "regular_price": "9",
+            "sale_price": "",
+            "date_on_sale_from": null,
+            "date_on_sale_to": null,
+            "out_stock_date": "2020-06-18T09:08:57",
+            "expired_stock": null
+        },
+        "_links": {
+            "self": [
+                {
+                    "href": "http://example.com/wp-json/wc/v3/products/83/inventories/7"
+                }
+            ],
+            "collection": [
+                {
+                    "href": "http://example.com/wp-json/wc/v3/products/83/inventories"
+                }
+            ],
+            "up": [
+                {
+                    "href": "http://example.com/wp-json/wc/v3/products/83"
+                }
+            ]
+        }
+    },
+    {
+        "id": "10",
+        "product_id": 37,
+        "name": "Main Inventory",
+        "priority": 0,
+        "is_main": true,
+        "inventory_date": "2018-06-06T10:14:00",
+        "lot": "123456",
+        "write_off": false,
+        "region": "",
+        "location": [],
+        "bbe_date": null,
+        "expiry_days": 0,
+        "inbound_stock": "0",
+        "stock_on_hold": 0,
+        "sold_today": 0,
+        "sales_last_days": 0,
+        "reserved_stock": 0,
+        "customer_returns": 0,
+        "warehouse_damage": 1,
+        "lost_in_post": 0,
+        "other_logs": 0,
+        "out_stock_days": 0,
+        "lost_sales": 0,
+        "update_date": "2020-06-04T06:20:29",
+        "meta_data": {
+            "sku": "",
+            "manage_stock": true,
+            "stock_quantity": 2,
+            "backorders": "no",
+            "stock_status": "instock",
+            "supplier_id": "",
+            "supplier_sku": "",
+            "sold_individually": false,
+            "out_stock_threshold": "",
+            "purchase_price": "5",
+            "price": "12",
+            "regular_price": "12",
+            "sale_price": "",
+            "date_on_sale_from": null,
+            "date_on_sale_to": null,
+            "out_stock_date": null,
+            "expired_stock": null
+        },
+        "_links": {
+            "self": [
+                {
+                    "href": "http://example.com/wp-json/wc/v3/products/37/inventories/10"
+                }
+            ],
+            "collection": [
+                {
+                    "href": "http://example.com/wp-json/wc/v3/products/37/inventories"
+                }
+            ],
+            "up": [
+                {
+                    "href": "http://example.com/wp-json/wc/v3/products/37"
+                }
+            ]
+        }
+    }
+]
+```
+
+#### Available parameters ####
+
+| Parameter           | Type    | Description                                                                                                                                 |
+|---------------------|---------|---------------------------------------------------------------------------------------------------------------------------------------------|
+| `after`             | string  | Limit response to resources created after a given ISO8601 compliant date.                                                                   |
+| `before`            | string  | Limit response to resources created before a given ISO8601 compliant date.                                                                  |
+| `exclude`           | array   | Ensure result set excludes specific IDs.                                                                                                    |
+| `include`           | array   | Limit result set excludes specific IDs.                                                                                                     |
+| `offset`            | integer | Offset the result set by a specific number of items.                                                                                        |
+| `page`              | integer | Current page of the collection. Default is `1`.                                                                                             |
+| `per_page`          | integer | Maximum number of items to be returned in result set. Default is `10`.                                                                      |
+| `order`             | string  | Order sort attribute ascending or descending. Options: `asc` and `desc`. Default is `asc`.                                                  |
+| `orderby`           | string  | Sort collection by object attribute. Options: `priority`, `inventory_date`, `id`, `name` and `bbe_date`. Default is `id`.                   |
+| `name`              | string  | Limit result set to inventories with a specific name.                                                                                       |
+| `exclude_write_off` | boolean | Exclude from result set the inventories that were marked as 'write off'. Default is `true`.                                                 |
+| `lot`               | string  | Limit result set to inventories with the specified LOT/BATCH number.                                                                        |
+| `countries`         | string  | If the country restriction mode is enabled, limit the result set to inventories linked to the specified country.                            |
+| `shipping_zone`     | string  | If the shipping zone restriction mode is enabled, limit the result set to inventories linked to the specified shipping zone.                |
+| `product`           | integer | Filter the results by the specified product ID.                                                                                             |
+| `search`            | string  | Limit results to those matching a string.                                                                                                   |
 
 
 ## Update an inventory ##

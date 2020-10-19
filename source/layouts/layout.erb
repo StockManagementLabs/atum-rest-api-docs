@@ -36,8 +36,14 @@ under the License.
     <link rel="apple-touch-icon-precomposed" href="images/favicon-180x180.png" />
     <meta name="msapplication-TileImage" content="images/favicon-270x270.png" />
 
-    <style>
-      <%= Rouge::Themes::MonokaiSublime.render(:scope => '.highlight') %>
+    <style media="screen">
+      <%= Rouge::Themes::MonokaiSublimeSlate.render(:scope => '.highlight') %>
+    </style>
+    <style media="print">
+      * {
+        transition:none!important;
+      }
+      <%= Rouge::Themes::Base16::Solarized.render(:scope => '.highlight') %>
     </style>
     <%= stylesheet_link_tag :screen, media: :screen %>
     <%= stylesheet_link_tag :print, media: :print %>
@@ -46,9 +52,15 @@ under the License.
     <% else %>
       <%= javascript_include_tag  "all_nosearch" %>
     <% end %>
+
+    <% if current_page.data.code_clipboard %>
+    <script>
+      $(function() { setupCodeCopy(); });
+    </script>
+    <% end %>
   </head>
 
-  <body class="<%= page_classes %><% if current_page.data.warning %> has-warning<% end %>" data-languages="<%=h language_tabs.map{ |lang| lang.is_a?(Hash) ? lang.keys.first : lang }.to_json %>">
+  <body class="<%= page_classes %>" data-languages="<%=h language_tabs.map{ |lang| lang.is_a?(Hash) ? lang.keys.first : lang }.to_json %>">
     <a href="#" id="nav-button">
       <span>
         NAV
@@ -56,9 +68,7 @@ under the License.
       </span>
     </a>
     <div class="toc-wrapper">
-      <a href="#" class="logo">
-        <%= image_tag "atum-logo-api.svg" %>
-      </a>
+      <%= image_tag "atum-logo-w-api.svg", class: 'logo' %>
       <% if language_tabs.any? %>
         <div class="lang-selector">
           <% language_tabs.each do |lang| %>
@@ -118,13 +128,6 @@ under the License.
           </div>
         <% end %>
       </div>
-	</div>
-
-	<% if current_page.data.warning %>
-		<div id="warning-top">
-			<%= current_page.data.warning %>
-		</div>
-	<% end %>
-
+    </div>
   </body>
 </html>

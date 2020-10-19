@@ -1,7 +1,7 @@
 ---
 title: ATUM REST API Documentation - WP REST API v3
 
-language_tabs:
+language_tabs: # must be one of https://git.io/vQNgJ
   - shell: cURL
   - javascript: Node.js
   - php: PHP
@@ -9,11 +9,11 @@ language_tabs:
   - ruby: Ruby
 
 toc_footers:
-  - <a href="https://github.com/StockManagementLabs/atum-rest-api-docs">REST API Docs on GitHub</a>
-  - <a href="https://forum.stockmanagementlabs.com/t/atum-documentation">ATUM Documentation</a>
-  - <a href="https://woocommerce.github.io/woocommerce-rest-api-docs">WooCommerce APi Docs</a>
-  - <a href="https://github.com/StockManagementLabs/atum-stock-manager-for-woocommerce">ATUM Repository</a>
-  - <a href="https://github.com/tripit/slate">Documentation Powered by Slate</a>
+   - <a href="https://github.com/StockManagementLabs/atum-rest-api-docs">REST API Docs on GitHub</a>
+   - <a href="https://forum.stockmanagementlabs.com/t/atum-documentation">ATUM Documentation</a>
+   - <a href="https://woocommerce.github.io/woocommerce-rest-api-docs">WooCommerce REST API Docs</a>
+   - <a href="https://github.com/StockManagementLabs/atum-stock-manager-for-woocommerce">ATUM Repository</a>
+   - <a href="https://github.com/tripit/slate">Documentation Powered by Slate</a>
 
 includes:
   - wp-api-v3/introduction
@@ -36,5 +36,7 @@ includes:
   - wp-api-v3/suppliers  
   - wp-api-v3/tools
 
-search: false
+search: true
+
+code_clipboard: true
 ---
