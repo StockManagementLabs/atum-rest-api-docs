@@ -1891,3 +1891,655 @@ woocommerce.post("products/22/variations/batch", data).parsed_response
     ]
 }
 ```
+
+## Batch update All product variations ##
+
+<i class="label label-ATUM">ATUM</i>
+
+This API helps you to batch create, update and delete multiple product variations and also mixing variations from distinct variables at the same time.
+
+<aside class="notice">
+Note: By default it's limited to up to 100 objects to be created, updated or deleted. 
+</aside>
+
+### HTTP request ###
+
+<div class="api-endpoint">
+	<div class="endpoint-data">
+		<i class="label label-post">POST</i>
+		<h6>/wp-json/wc/v3/atum/product-variations/batch</h6>
+	</div>
+</div>
+
+```shell
+curl -X POST https://example.com/wp-json/wc/v3/atum/product-variations/batch \
+	-u consumer_key:consumer_secret \
+	-H "Content-Type: application/json" \
+	-d '{
+  "create": [
+    {
+      "product_id": 22,
+      "regular_price": "10.00",
+      "atum_controlled": true,
+      "attributes": [
+        {
+          "id": 1,
+          "name": "color",
+          "option": "Purple"
+        }
+      ]
+    },
+    {
+      "product_id": 22,
+      "regular_price": "11.00",
+      "atum_controlled": true,
+      "attributes": [
+        {
+          "id": 1,
+          "name": "color",
+          "option": "Orange"
+        }
+      ]
+    }
+  ],
+  "update": [
+    {
+      "id": 24,
+      "supplier_id": 399,
+      "supplier_sku": "VARSKU"
+    }
+  ],
+  "delete": [
+    2132
+  ]
+}'
+```
+
+```javascript
+const data = {
+   create: [
+     {
+       product_id: 22,
+       regular_price: "10.00",
+       atum_controlled: true,
+       attributes: [
+         {
+           id: 1,
+           name: "color",
+           option: "Purple"
+         }
+       ]
+     },
+     {
+       product_id: 22,
+       regular_price: "11.00",
+       atum_controlled: true,
+       attributes: [
+         {
+           id: 1,
+           name: "color",
+           option: "Orange"
+         }
+       ]
+     }
+   ],
+   update: [
+     {
+       id: 24,
+       supplier_id: 399,
+       supplier_sku: "VARSKU"
+     }
+   ],
+   delete: [
+     2132
+   ]
+};
+
+WooCommerce.post("atum/product-variations/batch", data)
+  .then((response) => {
+    console.log(response.data);
+  })
+  .catch((error) => {
+    console.log(error.response.data);
+  });
+```
+
+```php
+<?php
+$data = [
+  'create' => [
+    [
+      'product_id' => 22,
+      'regular_price' => '10.00',
+      'atum_controlled' => true,
+      'attributes' => [
+        [
+          'id' => 1,
+          'name' => 'color',
+          'option' => 'Purple'
+        ]
+      ]
+    ],
+    [
+      'product_id' => 22,
+      'regular_price' => '11.00',
+      'atum_controlled' => true,
+      'attributes' => [
+        [
+          'id' => 1,
+          'name' => 'color',
+          'option' => 'Orange'
+        ]
+      ]
+    ]
+  ],
+  'update' => [
+    [
+      'id' => 24,
+      'supplier_id' => 399,
+      'supplier_sku' => 'VARSKU'
+    ]
+  ],
+  'delete' => [
+    2132
+  ]
+];
+
+print_r($woocommerce->post('atum/product-variations/batch', $data));
+?>
+```
+
+```python
+data = {
+ "create": [
+   {
+     "product_id": 22,
+     "regular_price": "10.00",
+     "atum_controlled": true,
+     "attributes": [
+       {
+         "id": 1,
+         "name": "color",
+         "option": "Purple"
+       }
+     ]
+   },
+   {
+     "product_id": 22,
+     "regular_price": "11.00",
+     "atum_controlled": true,
+     "attributes": [
+       {
+         "id": 1,
+         "name": "color",
+         "option": "Orange"
+       }
+     ]
+   }
+ ],
+ "update": [
+   {
+     "id": 24,
+     "supplier_id": 399,
+     "supplier_sku": "VARSKU"
+   }
+ ],
+ "delete": [
+   2132
+ ]
+}
+
+print(wcapi.post("atum/product-variations/batch", data).json())
+```
+
+```ruby
+data = {
+  create: [
+    {
+      product_id: 22,
+      regular_price: "10.00",
+      atum_controlled: true,
+      attributes: [
+        {
+          id: 1,
+          name: "color",
+          option: "Purple"
+        }
+      ]
+    },
+    {
+      product_id: 22,
+      regular_price: "11.00",
+      atum_controlled: true,
+      attributes: [
+       {
+          id: 1,
+          name: "color",
+          option: "Orange"
+        }
+      ]
+    }
+  ],
+  update: [
+    {
+      id: 24,
+      supplier_id: 399,
+      supplier_sku: "VARSKU"
+    }
+  ],
+  delete: [
+    2132
+  ]
+}
+
+woocommerce.post("products/22/variations/batch", data).parsed_response
+```
+
+> JSON response example:
+
+```json
+{
+    "create": [
+        {
+            "id": 2133,
+            "date_created": "2019-11-08T10:52:24",
+            "date_created_gmt": "2019-11-08T09:52:24",
+            "date_modified": "2019-11-08T10:52:24",
+            "date_modified_gmt": "2019-11-08T09:52:24",
+            "description": "",
+            "permalink": "https://example.com/product/ship-your-idea/?attribute_pa_color=purple",
+            "sku": "",
+            "price": "10.00",
+            "regular_price": "10.00",
+            "sale_price": "",
+            "date_on_sale_from": null,
+            "date_on_sale_from_gmt": null,
+            "date_on_sale_to": null,
+            "date_on_sale_to_gmt": null,
+            "on_sale": false,
+            "status": "publish",
+            "purchasable": true,
+            "virtual": false,
+            "downloadable": false,
+            "downloads": [],
+            "download_limit": -1,
+            "download_expiry": -1,
+            "tax_status": "taxable",
+            "tax_class": "",
+            "manage_stock": "parent",
+            "stock_quantity": 0,
+            "stock_status": "instock",
+            "backorders": "no",
+            "backorders_allowed": false,
+            "backordered": false,
+            "weight": "",
+            "dimensions": {
+                "length": "",
+                "width": "",
+                "height": ""
+            },
+            "shipping_class": "",
+            "shipping_class_id": 0,
+            "image": {
+                "id": 25,
+                "date_created": "2013-06-07T12:45:14",
+                "date_created_gmt": "2013-06-07T10:45:14",
+                "date_modified": "2013-06-07T12:45:14",
+                "date_modified_gmt": "2013-06-07T10:45:14",
+                "src": "https://example.com/wp-content/uploads/2013/06/T_4_front.jpg",
+                "name": "T_4_front",
+                "alt": ""
+            },
+            "attributes": [
+                {
+                    "id": 1,
+                    "name": "color",
+                    "option": "Purple"
+                }
+            ],
+            "menu_order": 0,
+            "meta_data": [],
+            "purchase_price": 0,
+            "supplier_id": 0,
+            "supplier_sku": "",
+            "atum_controlled": true,
+            "out_stock_date": null,
+            "out_stock_threshold": 0,
+            "inbound_stock": null,
+            "stock_on_hold": null,
+            "sold_today": null,
+            "sales_last_days": null,
+            "reserved_stock": null,
+            "customer_returns": null,
+            "warehouse_damage": null,
+            "lost_in_post": null,
+            "other_logs": null,
+            "out_stock_days": null,
+            "lost_sales": null,
+            "update_date": "2019-11-08T08:52:25",
+            "linked_bom": [],
+            "sync_purchase_price": false,
+            "mi_inventories": [],
+            "multi_inventory": "global",
+            "_links": {
+                "self": [
+                    {
+                        "href": "https://example.com/wp-json/wc/v3/products/22/variations/2133"
+                    }
+                ],
+                "collection": [
+                    {
+                        "href": "https://example.com/wp-json/wc/v3/products/22/variations"
+                    }
+                ],
+                "up": [
+                    {
+                        "href": "https://example.com/wp-json/wc/v3/products/22"
+                    }
+                ]
+            }
+        },
+        {
+            "id": 2134,
+            "date_created": "2019-11-08T10:52:26",
+            "date_created_gmt": "2019-11-08T09:52:26",
+            "date_modified": "2019-11-08T10:52:26",
+            "date_modified_gmt": "2019-11-08T09:52:26",
+            "description": "",
+            "permalink": "https://example.com/product/ship-your-idea/?attribute_pa_color=orange",
+            "sku": "",
+            "price": "11.00",
+            "regular_price": "11.00",
+            "sale_price": "",
+            "date_on_sale_from": null,
+            "date_on_sale_from_gmt": null,
+            "date_on_sale_to": null,
+            "date_on_sale_to_gmt": null,
+            "on_sale": false,
+            "status": "publish",
+            "purchasable": true,
+            "virtual": false,
+            "downloadable": false,
+            "downloads": [],
+            "download_limit": -1,
+            "download_expiry": -1,
+            "tax_status": "taxable",
+            "tax_class": "",
+            "manage_stock": "parent",
+            "stock_quantity": 0,
+            "stock_status": "instock",
+            "backorders": "no",
+            "backorders_allowed": false,
+            "backordered": false,
+            "weight": "",
+            "dimensions": {
+                "length": "",
+                "width": "",
+                "height": ""
+            },
+            "shipping_class": "",
+            "shipping_class_id": 0,
+            "image": {
+                "id": 25,
+                "date_created": "2013-06-07T12:45:14",
+                "date_created_gmt": "2013-06-07T10:45:14",
+                "date_modified": "2013-06-07T12:45:14",
+                "date_modified_gmt": "2013-06-07T10:45:14",
+                "src": "https://example.com/wp-content/uploads/2013/06/T_4_front.jpg",
+                "name": "T_4_front",
+                "alt": ""
+            },
+            "attributes": [
+                {
+                    "id": 1,
+                    "name": "color",
+                    "option": "Orange"
+                }
+            ],
+            "menu_order": 0,
+            "meta_data": [],
+            "purchase_price": 0,
+            "supplier_id": 0,
+            "supplier_sku": "",
+            "atum_controlled": true,
+            "out_stock_date": null,
+            "out_stock_threshold": 0,
+            "inbound_stock": null,
+            "stock_on_hold": null,
+            "sold_today": null,
+            "sales_last_days": null,
+            "reserved_stock": null,
+            "customer_returns": null,
+            "warehouse_damage": null,
+            "lost_in_post": null,
+            "other_logs": null,
+            "out_stock_days": null,
+            "lost_sales": null,
+            "update_date": "2019-11-08T08:52:26",
+            "linked_bom": [],
+            "sync_purchase_price": false,
+            "mi_inventories": [],
+            "multi_inventory": "global",
+            "_links": {
+                "self": [
+                    {
+                        "href": "https://example.com/wp-json/wc/v3/products/22/variations/2134"
+                    }
+                ],
+                "collection": [
+                    {
+                        "href": "https://example.com/wp-json/wc/v3/products/22/variations"
+                    }
+                ],
+                "up": [
+                    {
+                        "href": "https://example.com/wp-json/wc/v3/products/22"
+                    }
+                ]
+            }
+        }
+    ],
+    "update": [
+        {
+            "id": 24,
+            "date_created": "2013-06-07T12:44:58",
+            "date_created_gmt": "2013-06-07T10:44:58",
+            "date_modified": "2019-11-08T10:52:27",
+            "date_modified_gmt": "2019-11-08T09:52:27",
+            "description": "",
+            "permalink": "https://example.com/product/ship-your-idea/?attribute_pa_color=green",
+            "sku": "",
+            "price": "20",
+            "regular_price": "20",
+            "sale_price": "",
+            "date_on_sale_from": null,
+            "date_on_sale_from_gmt": null,
+            "date_on_sale_to": null,
+            "date_on_sale_to_gmt": null,
+            "on_sale": false,
+            "status": "publish",
+            "purchasable": true,
+            "virtual": false,
+            "downloadable": false,
+            "downloads": [],
+            "download_limit": -1,
+            "download_expiry": -1,
+            "tax_status": "taxable",
+            "tax_class": "",
+            "manage_stock": true,
+            "stock_quantity": 4,
+            "stock_status": "instock",
+            "backorders": "no",
+            "backorders_allowed": false,
+            "backordered": false,
+            "weight": "",
+            "dimensions": {
+                "length": "",
+                "width": "",
+                "height": ""
+            },
+            "shipping_class": "",
+            "shipping_class_id": 0,
+            "image": {
+                "id": 27,
+                "date_created": "2013-06-07T12:45:27",
+                "date_created_gmt": "2013-06-07T10:45:27",
+                "date_modified": "2013-06-07T12:45:27",
+                "date_modified_gmt": "2013-06-07T10:45:27",
+                "src": "https://example.com/wp-content/uploads/2013/06/T_3_front.jpg",
+                "name": "T_3_front",
+                "alt": ""
+            },
+            "attributes": [
+                {
+                    "id": 1,
+                    "name": "color",
+                    "option": "Green"
+                }
+            ],
+            "menu_order": 2,
+            "meta_data": [],
+            "purchase_price": 12,
+            "supplier_id": 399,
+            "supplier_sku": "VARSKU",
+            "atum_controlled": true,
+            "out_stock_date": null,
+            "out_stock_threshold": 0,
+            "inbound_stock": 1,
+            "stock_on_hold": 0,
+            "sold_today": 0,
+            "sales_last_days": 0,
+            "reserved_stock": 0,
+            "customer_returns": 0,
+            "warehouse_damage": 0,
+            "lost_in_post": 1,
+            "other_logs": 1,
+            "out_stock_days": 0,
+            "lost_sales": 0,
+            "update_date": "2019-11-08T08:52:27",
+            "linked_bom": [],
+            "sync_purchase_price": false,
+            "mi_inventories": [],
+            "multi_inventory": "no",
+            "_links": {
+                "self": [
+                    {
+                        "href": "https://example.com/wp-json/wc/v3/products/22/variations/24"
+                    }
+                ],
+                "collection": [
+                    {
+                        "href": "https://example.com/wp-json/wc/v3/products/22/variations"
+                    }
+                ],
+                "up": [
+                    {
+                        "href": "https://example.com/wp-json/wc/v3/products/22"
+                    }
+                ]
+            }
+        }
+    ],
+    "delete": [
+        {
+            "id": 2132,
+            "date_created": "2019-11-08T10:51:11",
+            "date_created_gmt": "2019-11-08T09:51:11",
+            "date_modified": "2019-11-08T10:51:11",
+            "date_modified_gmt": "2019-11-08T09:51:11",
+            "description": "",
+            "permalink": "https://example.com/product/ship-your-idea/?attribute_pa_color=purple",
+            "sku": "",
+            "price": "9.00",
+            "regular_price": "9.00",
+            "sale_price": "",
+            "date_on_sale_from": null,
+            "date_on_sale_from_gmt": null,
+            "date_on_sale_to": null,
+            "date_on_sale_to_gmt": null,
+            "on_sale": false,
+            "status": "publish",
+            "purchasable": true,
+            "virtual": false,
+            "downloadable": false,
+            "downloads": [],
+            "download_limit": -1,
+            "download_expiry": -1,
+            "tax_status": "taxable",
+            "tax_class": "",
+            "manage_stock": "parent",
+            "stock_quantity": 0,
+            "stock_status": "outofstock",
+            "backorders": "no",
+            "backorders_allowed": false,
+            "backordered": false,
+            "weight": "",
+            "dimensions": {
+                "length": "",
+                "width": "",
+                "height": ""
+            },
+            "shipping_class": "",
+            "shipping_class_id": 0,
+            "image": {
+                "id": 48,
+                "date_created": "2013-06-07T13:01:23",
+                "date_created_gmt": "2013-06-07T11:01:23",
+                "date_modified": "2013-06-07T13:01:23",
+                "date_modified_gmt": "2013-06-07T11:01:23",
+                "src": "https://example.com/wp-content/uploads/2013/06/hoodie_2_front.jpg",
+                "name": "hoodie_2_front",
+                "alt": ""
+            },
+            "attributes": [
+                {
+                    "id": 1,
+                    "name": "color",
+                    "option": "Purple"
+                }
+            ],
+            "menu_order": 0,
+            "meta_data": [],
+            "purchase_price": 6.5,
+            "supplier_id": 0,
+            "supplier_sku": "",
+            "atum_controlled": true,
+            "out_stock_date": null,
+            "out_stock_threshold": 0,
+            "inbound_stock": null,
+            "stock_on_hold": null,
+            "sold_today": null,
+            "sales_last_days": null,
+            "reserved_stock": null,
+            "customer_returns": null,
+            "warehouse_damage": null,
+            "lost_in_post": null,
+            "other_logs": null,
+            "out_stock_days": null,
+            "lost_sales": null,
+            "update_date": "2019-11-08T08:51:11",
+            "linked_bom": [],
+            "sync_purchase_price": false,
+            "mi_inventories": [],
+            "multi_inventory": "global",
+            "_links": {
+                "self": [
+                    {
+                        "href": "https://example.com/wp-json/wc/v3/products/0/variations/2132"
+                    }
+                ],
+                "collection": [
+                    {
+                        "href": "https://example.com/wp-json/wc/v3/products/0/variations"
+                    }
+                ],
+                "up": [
+                    {
+                        "href": "https://example.com/wp-json/wc/v3/products/0"
+                    }
+                ]
+            }
+        }
+    ]
+}
+```
