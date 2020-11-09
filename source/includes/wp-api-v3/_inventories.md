@@ -524,17 +524,17 @@ This API lets you retrieve all the inventories registered on the system.
 <div class="api-endpoint">
 	<div class="endpoint-data">
 		<i class="label label-get">GET</i>
-		<h6>/wp-json/wc/v3/inventories</h6>
+		<h6>/wp-json/wc/v3/atum/inventories</h6>
 	</div>
 </div>
 
 ```shell
-curl https://example.com/wp-json/wc/v3/inventories \
+curl https://example.com/wp-json/wc/v3/atum/inventories \
 	-u consumer_key:consumer_secret
 ```
 
 ```javascript
-WooCommerce.get("inventories")
+WooCommerce.get("atum/inventories")
   .then((response) => {
     console.log(response.data);
   })
@@ -544,15 +544,15 @@ WooCommerce.get("inventories")
 ```
 
 ```php
-<?php print_r($woocommerce->get('inventories')); ?>
+<?php print_r($woocommerce->get('atum/inventories')); ?>
 ```
 
 ```python
-print(wcapi.get("inventories").json())
+print(wcapi.get("atum/inventories").json())
 ```
 
 ```ruby
-woocommerce.get("inventories").parsed_response
+woocommerce.get("atum/inventories").parsed_response
 ```
 
 > JSON response example:
@@ -998,7 +998,7 @@ woocommerce.delete("products/507/inventories/208", force: true).parsed_response
 |-----------|--------|---------------------------------------------------------------|
 | `force`   | string | Required to be `true`, as resource does not support trashing. |
 
-## Batch update product locations ##
+## Batch update product inventories ##
 
 This API helps you to batch create, update and delete multiple product inventories.
 
@@ -1139,6 +1139,365 @@ data = {
 }
 
 woocommerce.post("products/507/inventories/batch", data).parsed_response
+```
+
+> JSON response example:
+
+```json
+{
+    "create": [
+        {
+            "id": 212,
+            "product_id": 507,
+            "name": "TEST Batch Inventory",
+            "priority": 0,
+            "is_main": false,
+            "inventory_date": "2020-09-01T11:11:31",
+            "lot": "",
+            "write_off": false,
+            "region": "",
+            "location": [],
+            "bbe_date": null,
+            "expiry_days": 0,
+            "meta_data": {
+                "sku": "",
+                "manage_stock": false,
+                "stock_quantity": null,
+                "backorders": "no",
+                "stock_status": "",
+                "supplier_id": "",
+                "supplier_sku": "",
+                "sold_individually": false,
+                "out_stock_threshold": "",
+                "purchase_price": "",
+                "price": "",
+                "regular_price": "",
+                "sale_price": "",
+                "date_on_sale_from": null,
+                "date_on_sale_to": null,
+                "out_stock_date": null
+            },
+            "_links": {
+                "self": [
+                    {
+                        "href": "https://example.com/wp-json/wc/v3/products/507/inventories/212"
+                    }
+                ],
+                "collection": [
+                    {
+                        "href": "https://example.com/wp-json/wc/v3/products/507/inventories"
+                    }
+                ],
+                "up": [
+                    {
+                        "href": "https://example.com/wp-json/wc/v3/products/507"
+                    }
+                ]
+            }
+        }
+    ],
+    "update": [
+        {
+            "id": 152,
+            "product_id": 507,
+            "name": "TEST Batch Inventory",
+            "priority": 1,
+            "is_main": false,
+            "inventory_date": "2019-06-11T10:08:00",
+            "lot": "",
+            "write_off": false,
+            "region": "",
+            "location": {
+                "53": "slovakia",
+                "49": "valencia"
+            },
+            "bbe_date": null,
+            "expiry_days": 0,
+            "meta_data": {
+                "sku": "",
+                "manage_stock": true,
+                "stock_quantity": 20,
+                "backorders": "no",
+                "stock_status": "instock",
+                "supplier_id": "",
+                "supplier_sku": "",
+                "sold_individually": false,
+                "out_stock_threshold": "",
+                "purchase_price": "5",
+                "price": "20",
+                "regular_price": "20",
+                "sale_price": "",
+                "date_on_sale_from": null,
+                "date_on_sale_to": null,
+                "out_stock_date": null
+            },
+            "_links": {
+                "self": [
+                    {
+                        "href": "https://example.com/wp-json/wc/v3/products/507/inventories/152"
+                    }
+                ],
+                "collection": [
+                    {
+                        "href": "https://example.com/wp-json/wc/v3/products/507/inventories"
+                    }
+                ],
+                "up": [
+                    {
+                        "href": "https://example.com/wp-json/wc/v3/products/507"
+                    }
+                ]
+            }
+        }
+    ],
+    "delete": [
+        {
+            "id": 210,
+            "product_id": 507,
+            "name": "TEST Batch Inventory",
+            "priority": 0,
+            "is_main": false,
+            "inventory_date": "2020-09-01T11:10:02",
+            "lot": "",
+            "write_off": false,
+            "region": "",
+            "location": [],
+            "bbe_date": null,
+            "expiry_days": 0,
+            "meta_data": {
+                "sku": "",
+                "manage_stock": false,
+                "stock_quantity": null,
+                "backorders": "no",
+                "stock_status": "",
+                "supplier_id": "",
+                "supplier_sku": "",
+                "sold_individually": false,
+                "out_stock_threshold": "",
+                "purchase_price": "",
+                "price": "",
+                "regular_price": "",
+                "sale_price": "",
+                "date_on_sale_from": null,
+                "date_on_sale_to": null,
+                "out_stock_date": null
+            },
+            "_links": {
+                "self": [
+                    {
+                        "href": "https://example.com/wp-json/wc/v3/products/507/inventories/210"
+                    }
+                ],
+                "collection": [
+                    {
+                        "href": "https://example.com/wp-json/wc/v3/products/507/inventories"
+                    }
+                ],
+                "up": [
+                    {
+                        "href": "https://example.com/wp-json/wc/v3/products/507"
+                    }
+                ]
+            }
+        },
+        {
+            "id": 211,
+            "product_id": 507,
+            "name": "TEST Batch Inventory",
+            "priority": 0,
+            "is_main": false,
+            "inventory_date": "2020-09-01T11:10:05",
+            "lot": "",
+            "write_off": false,
+            "region": "",
+            "location": [],
+            "bbe_date": null,
+            "expiry_days": 0,
+            "meta_data": {
+                "sku": "",
+                "manage_stock": false,
+                "stock_quantity": null,
+                "backorders": "no",
+                "stock_status": "",
+                "supplier_id": "",
+                "supplier_sku": "",
+                "sold_individually": false,
+                "out_stock_threshold": "",
+                "purchase_price": "",
+                "price": "",
+                "regular_price": "",
+                "sale_price": "",
+                "date_on_sale_from": null,
+                "date_on_sale_to": null,
+                "out_stock_date": null
+            },
+            "_links": {
+                "self": [
+                    {
+                        "href": "https://example.com/wp-json/wc/v3/products/507/inventories/211"
+                    }
+                ],
+                "collection": [
+                    {
+                        "href": "https://example.com/wp-json/wc/v3/products/507/inventories"
+                    }
+                ],
+                "up": [
+                    {
+                        "href": "https://example.com/wp-json/wc/v3/products/507"
+                    }
+                ]
+            }
+        }
+    ]
+}
+```
+## Batch update All inventories ##
+
+This API helps you to batch create, update and delete multiple inventories at once and also mixing inventories from distinct products at the same time.
+
+<aside class="notice">
+Note: By default it's limited to up to 100 objects to be created, updated or deleted. 
+</aside>
+
+### HTTP request ###
+
+<div class="api-endpoint">
+	<div class="endpoint-data">
+		<i class="label label-post">POST</i>
+		<h6>/wp-json/wc/v3/atum/inventories/batch</h6>
+	</div>
+</div>
+
+```shell
+curl -X POST https://example.com/wp-json/wc/v3/atum/inventories/batch \
+	-u consumer_key:consumer_secret \
+	-H "Content-Type: application/json" \
+	-d '{
+    "create": [
+        {
+            "product_id": 2123,
+            "name": "TEST Batch Inventory",
+            "is_main": false
+        }
+    ],
+    "update": [
+        {
+            "id": 152,
+            "meta_data": {
+                "manage_stock": true,
+                "stock_quantity": 20
+            }
+        }
+    ],
+    "delete": [ 210, 211 ]
+}'
+```
+
+```javascript
+const data = {
+     create: [
+         {
+            product_id: 2123,
+             name: 'TEST Batch Inventory',
+             is_main: false
+         }
+     ],
+     update: [
+         {
+             id: 152,
+             meta_data: {
+                 manage_stock: true,
+                 stock_quantity: 20
+             }
+         }
+     ],
+     delete: [ 210, 211 ]
+};
+
+WooCommerce.post("atum/inventories/batch", data)
+  .then((response) => {
+    console.log(response.data);
+  })
+  .catch((error) => {
+    console.log(error.response.data);
+  });
+```
+
+```php
+<?php
+$data = [
+    'create' => [
+        [
+          'product_id' => 2123,
+          'name' => 'TEST Batch Inventory',
+          'is_main' => false
+        ],
+    ],
+    'update' => [
+        [
+            'id' => 152,
+            'meta_data' => [
+                'manage_stock' => true,
+                'stock_quantity' => 20
+            ],
+        ],
+    ],
+    'delete' => [
+        210, 211
+    ]
+];
+
+print_r($woocommerce->post('atum/inventories/batch', $data));
+?>
+```
+
+```python
+data = {
+    "create": [
+        {
+            "product_id": 2123,
+            "name": "TEST Batch Inventory",
+            "is_main": false
+        }
+    ],
+    "update": [
+        {
+            "id": 152,
+            "meta_data": {
+                "manage_stock": true,
+                "stock_quantity": 20
+            }
+        }
+    ],
+    "delete": [ 210, 211 ]
+}
+
+print(wcapi.post("atum/inventories/batch", data).json())
+```
+
+```ruby
+data = {
+   create: [
+       {
+           product_id: 2123,
+           name: "TEST Batch Inventory",
+           is_main: false
+       }
+   ],
+   update: [
+       {
+           id: 152,
+           meta_data: {
+               manage_stock: true,
+               stock_quantity: 20
+           }
+       }
+   ],
+   delete: [ 210, 211 ]
+}
+
+woocommerce.post("atum/inventories/batch", data).parsed_response
 ```
 
 > JSON response example:
