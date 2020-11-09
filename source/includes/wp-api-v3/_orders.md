@@ -1559,7 +1559,7 @@ woocommerce.put("orders/727", data).parsed_response
   "order_key": "wc_order_58d2d042d1d",
   "created_via": "rest-api",
   "version": "3.0.0",
-  "status": "precessing",
+  "status": "processing",
   "currency": "USD",
   "date_created": "2019-03-22T16:28:02",
   "date_created_gmt": "2019-03-22T19:28:02",
@@ -1687,6 +1687,270 @@ woocommerce.put("orders/727", data).parsed_response
       ],
       "sku": "Bar3",
       "price": 12
+    }
+  ],
+  "tax_lines": [
+    {
+      "id": 318,
+      "rate_code": "US-CA-STATE TAX",
+      "rate_id": 75,
+      "label": "State Tax",
+      "compound": false,
+      "tax_total": "1.35",
+      "shipping_tax_total": "0.00",
+      "meta_data": []
+    }
+  ],
+  "shipping_lines": [
+    {
+      "id": 317,
+      "method_title": "Flat Rate",
+      "method_id": "flat_rate",
+      "total": "10.00",
+      "total_tax": "0.00",
+      "taxes": [],
+      "meta_data": []
+    }
+  ],
+  "fee_lines": [],
+  "coupon_lines": [],
+  "refunds": [],
+  "_links": {
+    "self": [
+      {
+        "href": "https://example.com/wp-json/wc/v3/orders/727"
+      }
+    ],
+    "collection": [
+      {
+        "href": "https://example.com/wp-json/wc/v3/orders"
+      }
+    ]
+  }
+}
+```
+
+> Example of deleting a Multi-Inventory's order item from a specific order item and also deleting an order item:
+
+```shell
+curl -X PUT https://example.com/wp-json/wc/v3/orders/727 \
+	-u consumer_key:consumer_secret \
+	-H "Content-Type: application/json" \
+	-d '{
+      "line_items": [
+        {
+          "id": 315,
+          "product_id": 93,
+          "mi_inventories": [
+            {
+              "inventory_id": 152,
+              "delete": true
+            }
+          ]
+        },
+        {
+          "id": 316,
+          "product_id": null    
+        }
+      ]
+    }'
+```
+
+```javascript
+const data = {
+  line_items: [
+   {
+     id: 315,
+     product_id: 93,
+     mi_inventories: [
+       {
+         inventory_id: 152,
+         delete: true
+       }
+     ]
+   },
+   {
+     id: 316,
+     product_id: null    
+   }
+ ]
+};
+
+WooCommerce.put("orders/727", data)
+  .then((response) => {
+    console.log(response.data);
+  })
+  .catch((error) => {
+    console.log(error.response.data);
+  });
+```
+
+```php
+<?php
+$data = [
+    'line_items' => [
+        [
+           'id' => 315,
+            'product_id' => 93,
+            'mi_inventories' => [
+                [
+                    'inventory_id' => 152,
+                    'delete' => true
+                ]
+            ]
+        ],    
+        [
+           'id' => 316,
+           'product_id' => null    
+        ]
+    ]
+];
+
+print_r($woocommerce->put('orders/727', $data));
+?>
+```
+
+```python
+data = {
+  "line_items": [
+    {
+      "id": 315,
+      "product_id": 93,
+      "mi_inventories": [
+        {
+          "inventory_id": 152,
+          "delete": true
+        }
+      ]
+    },
+    {
+      "id": 316,
+      "product_id": null    
+    }
+  ]
+}
+
+print(wcapi.put("orders/727", data).json())
+```
+
+```ruby
+data = {
+  line_items: [
+    {
+      id: 315,
+      product_id: 93,
+      mi_inventories: [
+        {
+          inventory_id: 152,
+          delete: true
+        }
+      ]
+    },
+    {
+      id: 316,
+      product_id: null    
+    }
+  ]
+}
+
+woocommerce.put("orders/727", data).parsed_response
+```
+
+> JSON response example:
+
+```json
+{
+  "id": 727,
+  "parent_id": 0,
+  "number": "727",
+  "order_key": "wc_order_58d2d042d1d",
+  "created_via": "rest-api",
+  "version": "3.0.0",
+  "status": "processing",
+  "currency": "USD",
+  "date_created": "2019-03-22T16:28:02",
+  "date_created_gmt": "2019-03-22T19:28:02",
+  "date_modified": "2019-03-22T16:30:35",
+  "date_modified_gmt": "2019-03-22T19:30:35",
+  "discount_total": "0.00",
+  "discount_tax": "0.00",
+  "shipping_total": "10.00",
+  "shipping_tax": "0.00",
+  "cart_tax": "1.35",
+  "total": "29.35",
+  "total_tax": "1.35",
+  "prices_include_tax": false,
+  "customer_id": 0,
+  "customer_ip_address": "",
+  "customer_user_agent": "",
+  "customer_note": "",
+  "billing": {
+    "first_name": "John",
+    "last_name": "Doe",
+    "company": "",
+    "address_1": "969 Market",
+    "address_2": "",
+    "city": "San Francisco",
+    "state": "CA",
+    "postcode": "94103",
+    "country": "US",
+    "email": "john.doe@example.com",
+    "phone": "(555) 555-5555"
+  },
+  "shipping": {
+    "first_name": "John",
+    "last_name": "Doe",
+    "company": "",
+    "address_1": "969 Market",
+    "address_2": "",
+    "city": "San Francisco",
+    "state": "CA",
+    "postcode": "94103",
+    "country": "US"
+  },
+  "payment_method": "bacs",
+  "payment_method_title": "Direct Bank Transfer",
+  "transaction_id": "",
+  "date_paid": "2019-03-22T16:28:08",
+  "date_paid_gmt": "2019-03-22T19:28:08",
+  "date_completed": "2019-03-22T16:30:35",
+  "date_completed_gmt": "2019-03-22T19:30:35",
+  "cart_hash": "",
+  "meta_data": [
+    {
+      "id": 13106,
+      "key": "_download_permissions_granted",
+      "value": "yes"
+    },
+    {
+      "id": 13109,
+      "key": "_order_stock_reduced",
+      "value": "yes"
+    }
+  ],
+  "line_items": [
+    {
+      "id": 315,
+      "name": "Woo Single #1",
+      "product_id": 93,
+      "variation_id": 0,
+      "quantity": 2,
+      "tax_class": "",
+      "subtotal": "6.00",
+      "subtotal_tax": "0.45",
+      "total": "6.00",
+      "total_tax": "0.45",
+      "taxes": [
+        {
+          "id": 75,
+          "total": "0.45",
+          "subtotal": "0.45"
+        }
+      ],
+      "meta_data": [],
+      "sku": "",
+      "price": 3,
+      "mi_inventories": []
     }
   ],
   "tax_lines": [
