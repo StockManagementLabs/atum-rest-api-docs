@@ -4,7 +4,7 @@
 
 The ATUM inventories API allows you to create, view, update, and delete inventories.
 
-## Inventories - Main data properties ##
+## Inventories properties ##
 
 | Attribute          | Type      | Description                                                                                                            |
 |--------------------|-----------|------------------------------------------------------------------------------------------------------------------------|
