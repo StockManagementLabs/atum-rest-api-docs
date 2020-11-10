@@ -4,7 +4,7 @@
 
 The add-ons API allows you to view the installed ATUM add-ons and their licenses.
 
-## Product properties ##
+## Add-on properties ##
 
 | Attribute | Type   | Description                                                                                                                                                                                                             |
 |-----------|--------|-------------------------------------------------------------------------------------|

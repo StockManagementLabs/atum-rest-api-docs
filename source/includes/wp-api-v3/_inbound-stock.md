@@ -4,7 +4,7 @@
 
 The inbound stock API allows you to view the products that are set within pending purchase orders.
 
-## Product properties ##
+## Inbound stock properties ##
 
 | Attribute               | Type      | Description                                                                                                                                                                                                             |
 |-------------------------|-----------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|

@@ -1408,7 +1408,7 @@ woocommerce.put("atum/purchase-orders/1927", data).parsed_response
 }
 ```
 
-## Delete a purchas order ##
+## Delete a purchase order ##
 
 This API helps you delete a purchase order.
 
@@ -1595,7 +1595,7 @@ woocommerce.delete("atum/purchase-orders/2156", force: true).parsed_response
 |-----------|--------|----------------------------------------------------------------------------------|
 | `force`   | string | Use `true` whether to permanently delete the purchase order, Default is `false`. |
 
-## Batch update purchas orders ##
+## Batch update purchase orders ##
 
 This API helps you to batch create, update and delete multiple purchase orders.
 
