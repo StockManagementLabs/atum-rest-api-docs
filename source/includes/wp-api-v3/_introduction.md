@@ -8,7 +8,7 @@ The following table shows API versions present in each major version of WooComme
 
 | API Version | ATUM Version   | WC Version     | WP Version   |
 |-------------|----------------|----------------|--------------|
-| `v3`        | 1.6.2 or later | 3.5.x or later | 4.4 or later |
+| `v3`        | 1.8.8 or later | 3.6.0 or later | 5.0 or later |
 
 <aside class="notice">
 Older WC REST API versions are not supported by ATUM.
@@ -24,9 +24,9 @@ There is info described here that it's ony available when some of the ATUM's pre
 
 To use the latest version of the REST API you must be using:
 
-* ATUM Inventory Management for WooCommerce 1.6.2+. 
-* WooCommerce 3.5+.
-* WordPress 4.4+.
+* ATUM Inventory Management for WooCommerce 1.8.8+. 
+* WooCommerce 3.6+.
+* WordPress 5.0+.
 * Pretty permalinks in `Settings > Permalinks` so that the custom endpoints are supported. __Default permalinks will not work.__
 * You may access the API over either HTTP or HTTPS, but *HTTPS is recommended where possible*.
 
