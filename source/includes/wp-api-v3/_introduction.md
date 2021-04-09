@@ -1,6 +1,6 @@
 # Introduction #
 
-ATUM 1.6.2+ is fully integrated with the WooCommerce and WordPress [REST](http://en.wikipedia.org/wiki/Representational_State_Transfer) APIs. This allows ATUM data to be created, read, updated, and deleted using requests in JSON format and using WordPress REST API Authentication methods and standard HTTP verbs which are understood by most HTTP clients.
+ATUM 1.8.8+ is fully integrated with the WooCommerce and WordPress [REST](http://en.wikipedia.org/wiki/Representational_State_Transfer) APIs. This allows ATUM data to be created, read, updated, and deleted using requests in JSON format and using WordPress REST API Authentication methods and standard HTTP verbs which are understood by most HTTP clients.
 
 The current WP REST API integration version is `v3` which takes a first-order position in endpoints. 
 
