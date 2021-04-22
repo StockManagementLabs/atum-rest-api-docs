@@ -874,6 +874,394 @@ woocommerce.get("products/22/variations").parsed_response
 | `search`                | string  | Limit results to those matching a string.                                                                                                                                                                         |
 | `after`                 | string  | Limit response to resources published after a given ISO8601 compliant date.                                                                                                                                       |
 | `before`                | string  | Limit response to resources published before a given ISO8601 compliant date.                                                                                                                                      |
+| `modified_after`        | string  | Limit response to resources modified after a given ISO8601 compliant date.                                                                                                                                        |
+| `modified_before`       | string  | Limit response to resources modified before a given ISO8601 compliant date.                                                                                                                                       |
+| `exclude`               | array   | Ensure result set excludes specific IDs.                                                                                                                                                                          |
+| `include`               | array   | Limit result set to specific ids.                                                                                                                                                                                 |
+| `offset`                | integer | Offset the result set by a specific number of items.                                                                                                                                                              |
+| `order`                 | string  | Order sort attribute ascending or descending. Options: `asc` and `desc`. Default is `desc`.                                                                                                                       |
+| `orderby`               | string  | Sort collection by object attribute. Options: `date`, `id`, `include`, `title` and `slug`. Default is `date`.                                                                                                     |
+| `parent`                | array   | Limit result set to those of particular parent IDs.                                                                                                                                                               |
+| `parent_exclude`        | array   | Limit result set to all items except those of a particular parent ID.                                                                                                                                             |
+| `slug`                  | string  | Limit result set to products with a specific slug.                                                                                                                                                                |
+| `status`                | string  | Limit result set to products assigned a specific status. Options: `any`, `draft`, `pending`, `private` and `publish`. Default is `any`.                                                                           |
+| `sku`                   | string  | Limit result set to products with a specific SKU.                                                                                                                                                                 |
+| `tax_class`             | string  | Limit result set to products with a specific tax class. Default options: `standard`, `reduced-rate` and `zero-rate`.                                                                                              |
+| `on_sale`               | boolean | Limit result set to products on sale.                                                                                                                                                                             |
+| `min_price`             | string  | Limit result set to products based on a minimum price.                                                                                                                                                            |
+| `max_price`             | string  | Limit result set to products based on a maximum price.                                                                                                                                                            |
+| `stock_status`          | string  | Limit result set to products with specified stock status. Options: `instock`, `outofstock` and `onbackorder`.                                                                                                     |
+| `atum_controlled`       | boolean | Limit result set to products controlled by ATUM. <i class="label label-atum">ATUM</i>                                                                                                                             |
+| `min_purchase_price`    | number  | Limit result set to products based on a minimum purchase price. <i class="label label-atum">ATUM</i>                                                                                                              |
+| `max_purchase_price`    | number  | Limit result set to products based on a maximum purchase price. <i class="label label-atum">ATUM</i>                                                                                                              |
+| `supplier`              | integer | Limit result set to products linked to the specified Supplier ID. <i class="label label-atum">ATUM</i>                                                                                                            |
+| `supplier_sku`          | integer | Limit result set to products with a specific Supplier SKU. <i class="label label-atum">ATUM</i>                                                                                                                   |
+| `multi_inventory`       | string  | Limit result set to products with a specific Multi-Inventory status. Options: `yes`, `no` and `global`. <i class="label label-addon">Multi-Inventory</i> <i class="label label-atum">ATUM</i>                     |
+| `inventory_sorting_mode`| string  | Limit result set to products with a specific inventory sorting mode. Options: `fifo`, `lifo`, `bbe`, `manual` and `global`. <i class="label label-addon">Multi-Inventory</i> <i class="label label-atum">ATUM</i> |
+| `inventory_iteration`   | string  | Limit result set to products with a specific inventory iteration. Options: `use_next`, `out_of_stock` and `global`. <i class="label label-addon">Multi-Inventory</i> <i class="label label-atum">ATUM</i>         |
+| `expirable_inventories` | string  | Limit result set to products with a specific expirable inventories option. Options: `yes`, `no` and `global`. <i class="label label-addon">Multi-Inventory</i> <i class="label label-atum">ATUM</i>               |
+| `price_per_inventory`   | string  | Limit result set to products with a specific price per inventory option. Options: `yes`, `no` and `global`. <i class="label label-addon">Multi-Inventory</i> <i class="label label-atum">ATUM</i>                 |
+| `bom_sellable`          | boolean | Limit result set to sellable BOM products. It should be used in conjunction with the `type` set to any BOM type. <i class="label label-addon">Product Levels</i> <i class="label label-atum">ATUM</i>             |
+
+## List all variations ##
+
+This API helps you to view all the variations (no matter its parent product).
+
+### HTTP request ###
+
+<div class="api-endpoint">
+	<div class="endpoint-data">
+		<i class="label label-get">GET</i>
+		<h6>/wp-json/wc/v3/atum/products-variations</h6>
+	</div>
+</div>
+
+```shell
+curl https://example.com/wp-json/wc/v3/atum/products-variations \
+	-u consumer_key:consumer_secret
+```
+
+```javascript
+WooCommerce.get("atum/products-variations")
+  .then((response) => {
+    console.log(response.data);
+  })
+  .catch((error) => {
+    console.log(error.response.data);
+  });
+```
+
+```php
+<?php print_r($woocommerce->get('atum/products-variations')); ?>
+```
+
+```python
+print(wcapi.get("atum/products-variations").json())
+```
+
+```ruby
+woocommerce.get("atum/products-variations").parsed_response
+```
+
+> JSON response example:
+
+```json
+[
+	{
+		"id": 2969,
+		"date_created": "2021-04-13T13:13:34",
+		"date_created_gmt": "2021-04-13T11:13:34",
+		"date_modified": "2021-04-13T13:20:12",
+		"date_modified_gmt": "2021-04-13T11:20:12",
+		"description": "",
+		"permalink": "http://example.com/product/testing-variation-fields/?attribute_pa_color=orange",
+		"sku": "",
+		"price": "",
+		"regular_price": "",
+		"sale_price": "",
+		"date_on_sale_from": null,
+		"date_on_sale_from_gmt": null,
+		"date_on_sale_to": null,
+		"date_on_sale_to_gmt": null,
+		"on_sale": false,
+		"status": "publish",
+		"purchasable": false,
+		"virtual": false,
+		"downloadable": false,
+		"downloads": [],
+		"download_limit": -1,
+		"download_expiry": -1,
+		"tax_status": "taxable",
+		"tax_class": "",
+		"manage_stock": true,
+		"stock_quantity": 0,
+		"stock_status": "outofstock",
+		"backorders": "no",
+		"backorders_allowed": false,
+		"backordered": false,
+		"low_stock_amount": "",
+		"weight": "",
+		"dimensions": {
+			"length": "",
+			"width": "",
+			"height": ""
+		},
+		"shipping_class": "",
+		"shipping_class_id": 0,
+		"image": null,
+		"attributes": [
+			{
+				"id": 1,
+				"name": "color",
+				"option": "Orange"
+			}
+		],
+		"menu_order": 2,
+		"meta_data": [],
+		"purchase_price": null,
+		"supplier_id": null,
+		"supplier_sku": "",
+		"atum_controlled": true,
+		"out_stock_date": null,
+		"out_stock_threshold": null,
+		"inbound_stock": null,
+		"stock_on_hold": 0,
+		"sold_today": 0,
+		"sales_last_days": 0,
+		"reserved_stock": null,
+		"customer_returns": null,
+		"warehouse_damage": null,
+		"lost_in_post": null,
+		"other_logs": null,
+		"out_stock_days": 0,
+		"lost_sales": 0,
+		"update_date": "2021-04-21T05:39:48",
+		"atum_stock_status": "outofstock",
+		"low_stock": false,
+		"linked_bom": [],
+		"sync_purchase_price": false,
+		"bom_sellable": null,
+		"minimum_threshold": null,
+		"available_to_purchase": null,
+		"selling_priority": null,
+		"calculated_stock": null,
+		"is_bom": false,
+		"mi_inventories": [],
+		"multi_inventory": "global",
+		"parent_id": 2966,
+		"_links": {
+			"self": [
+				{
+					"href": "http://example.com/wp-json/wc/v3/products/2966/variations/2969"
+				}
+			],
+			"collection": [
+				{
+					"href": "http://example.com/wp-json/wc/v3/products/2966/variations"
+				}
+			],
+			"up": [
+				{
+					"href": "http://example.com/wp-json/wc/v3/products/2966"
+				}
+			]
+		}
+	},
+	{
+		"id": 2968,
+		"date_created": "2021-04-13T13:13:34",
+		"date_created_gmt": "2021-04-13T11:13:34",
+		"date_modified": "2021-04-13T13:20:12",
+		"date_modified_gmt": "2021-04-13T11:20:12",
+		"description": "",
+		"permalink": "http://example.com/product/testing-variation-fields/?attribute_pa_color=blue",
+		"sku": "",
+		"price": "",
+		"regular_price": "",
+		"sale_price": "",
+		"date_on_sale_from": null,
+		"date_on_sale_from_gmt": null,
+		"date_on_sale_to": null,
+		"date_on_sale_to_gmt": null,
+		"on_sale": false,
+		"status": "publish",
+		"purchasable": false,
+		"virtual": false,
+		"downloadable": false,
+		"downloads": [],
+		"download_limit": -1,
+		"download_expiry": -1,
+		"tax_status": "taxable",
+		"tax_class": "",
+		"manage_stock": true,
+		"stock_quantity": 0,
+		"stock_status": "outofstock",
+		"backorders": "no",
+		"backorders_allowed": false,
+		"backordered": false,
+		"low_stock_amount": "",
+		"weight": "",
+		"dimensions": {
+			"length": "",
+			"width": "",
+			"height": ""
+		},
+		"shipping_class": "",
+		"shipping_class_id": 0,
+		"image": null,
+		"attributes": [
+			{
+				"id": 1,
+				"name": "color",
+				"option": "Blue"
+			}
+		],
+		"menu_order": 1,
+		"meta_data": [],
+		"purchase_price": null,
+		"supplier_id": null,
+		"supplier_sku": "",
+		"atum_controlled": true,
+		"out_stock_date": null,
+		"out_stock_threshold": null,
+		"inbound_stock": null,
+		"stock_on_hold": 0,
+		"sold_today": 0,
+		"sales_last_days": 0,
+		"reserved_stock": null,
+		"customer_returns": null,
+		"warehouse_damage": null,
+		"lost_in_post": null,
+		"other_logs": null,
+		"out_stock_days": 0,
+		"lost_sales": 0,
+		"update_date": "2021-04-21T05:39:48",
+		"atum_stock_status": "outofstock",
+		"low_stock": false,
+		"linked_bom": [],
+		"sync_purchase_price": false,
+		"bom_sellable": null,
+		"minimum_threshold": null,
+		"available_to_purchase": null,
+		"selling_priority": null,
+		"calculated_stock": null,
+		"is_bom": false,
+		"mi_inventories": [],
+		"multi_inventory": "global",
+		"parent_id": 2966,
+		"_links": {
+			"self": [
+				{
+					"href": "http://example.com/wp-json/wc/v3/products/2966/variations/2968"
+				}
+			],
+			"collection": [
+				{
+					"href": "http://example.com/wp-json/wc/v3/products/2966/variations"
+				}
+			],
+			"up": [
+				{
+					"href": "http://example.com/wp-json/wc/v3/products/2966"
+				}
+			]
+		}
+	},
+	{
+		"id": 2889,
+		"date_created": "2021-02-02T09:36:01",
+		"date_created_gmt": "2021-02-02T08:36:01",
+		"date_modified": "2021-02-02T09:37:51",
+		"date_modified_gmt": "2021-02-02T08:37:51",
+		"description": "",
+		"permalink": "http://example.com/product/variable-test/?attribute_pa_color=purple",
+		"sku": "",
+		"price": "",
+		"regular_price": "",
+		"sale_price": "",
+		"date_on_sale_from": null,
+		"date_on_sale_from_gmt": null,
+		"date_on_sale_to": null,
+		"date_on_sale_to_gmt": null,
+		"on_sale": false,
+		"status": "publish",
+		"purchasable": false,
+		"virtual": false,
+		"downloadable": false,
+		"downloads": [],
+		"download_limit": -1,
+		"download_expiry": -1,
+		"tax_status": "taxable",
+		"tax_class": "",
+		"manage_stock": "parent",
+		"stock_quantity": 0,
+		"stock_status": "outofstock",
+		"backorders": "no",
+		"backorders_allowed": false,
+		"backordered": false,
+		"low_stock_amount": "",
+		"weight": "",
+		"dimensions": {
+			"length": "",
+			"width": "",
+			"height": ""
+		},
+		"shipping_class": "",
+		"shipping_class_id": 0,
+		"image": null,
+		"attributes": [
+			{
+				"id": 1,
+				"name": "color",
+				"option": "Purple"
+			}
+		],
+		"menu_order": 3,
+		"meta_data": [],
+		"purchase_price": null,
+		"supplier_id": null,
+		"supplier_sku": "",
+		"atum_controlled": false,
+		"out_stock_date": null,
+		"out_stock_threshold": null,
+		"inbound_stock": null,
+		"stock_on_hold": 0,
+		"sold_today": 0,
+		"sales_last_days": 0,
+		"reserved_stock": null,
+		"customer_returns": null,
+		"warehouse_damage": null,
+		"lost_in_post": null,
+		"other_logs": null,
+		"out_stock_days": 0,
+		"lost_sales": 0,
+		"update_date": "2021-04-21T05:39:48",
+		"atum_stock_status": "outofstock",
+		"low_stock": false,
+		"linked_bom": [],
+		"sync_purchase_price": false,
+		"bom_sellable": null,
+		"minimum_threshold": null,
+		"available_to_purchase": null,
+		"selling_priority": null,
+		"calculated_stock": null,
+		"is_bom": false,
+		"mi_inventories": [],
+		"multi_inventory": "global",
+		"parent_id": 505,
+		"_links": {
+			"self": [
+				{
+					"href": "http://example.com/wp-json/wc/v3/products/505/variations/2889"
+				}
+			],
+			"collection": [
+				{
+					"href": "http://example.com/wp-json/wc/v3/products/505/variations"
+				}
+			],
+			"up": [
+				{
+					"href": "http://example.com/wp-json/wc/v3/products/505"
+				}
+			]
+		}
+	}
+]
+```
+
+#### Available parameters ####
+
+| Parameter               | Type    | Description                                                                                                                                                                                                       |
+|-------------------------|---------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `context`               | string  | Scope under which the request is made; determines fields present in response. Options: `view` and `edit`. Default is `view`.                                                                                      |
+| `page`                  | integer | Current page of the collection. Default is `1`.                                                                                                                                                                   |
+| `per_page`              | integer | Maximum number of items to be returned in result set. Default is `10`.                                                                                                                                            |
+| `search`                | string  | Limit results to those matching a string.                                                                                                                                                                         |
+| `after`                 | string  | Limit response to resources published after a given ISO8601 compliant date.                                                                                                                                       |
+| `before`                | string  | Limit response to resources published before a given ISO8601 compliant date.                                                                                                                                      |
+| `modified_after`        | string  | Limit response to resources modified after a given ISO8601 compliant date.                                                                                                                                        |
+| `modified_before`       | string  | Limit response to resources modified before a given ISO8601 compliant date.                                                                                                                                       |
 | `exclude`               | array   | Ensure result set excludes specific IDs.                                                                                                                                                                          |
 | `include`               | array   | Limit result set to specific ids.                                                                                                                                                                                 |
 | `offset`                | integer | Offset the result set by a specific number of items.                                                                                                                                                              |
@@ -1892,7 +2280,7 @@ woocommerce.post("products/22/variations/batch", data).parsed_response
 }
 ```
 
-## Batch update All product variations ##
+## Batch update any variations ##
 
 <i class="label label-ATUM">ATUM</i>
 
