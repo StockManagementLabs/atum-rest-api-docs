@@ -7,78 +7,79 @@ The product variations API allows you to create, view, update, and delete indivi
 
 ## Product variation properties ##
 
-| Attribute               | Type      | Description                                                                                                                                                                                                                                     |
-|-------------------------|-----------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `id`                    | integer   | Unique identifier for the resource. <i class="label label-info">read-only</i>                                                                                                                                                                   |
-| `date_created`          | date-time | The date the variation was created, in the site's timezone. <i class="label label-info">read-only</i>                                                                                                                                           |
-| `date_created_gmt`      | date-time | The date the variation was created, as GMT. <i class="label label-info">read-only</i>                                                                                                                                                           |
-| `date_modified`         | date-time | The date the variation was last modified, in the site's timezone. <i class="label label-info">read-only</i>                                                                                                                                     |
-| `date_modified_gmt`     | date-time | The date the variation was last modified, as GMT. <i class="label label-info">read-only</i>                                                                                                                                                     |
-| `description`           | string    | Variation description.                                                                                                                                                                                                                          |
-| `permalink`             | string    | Variation URL. <i class="label label-info">read-only</i>                                                                                                                                                                                        |
-| `sku`                   | string    | Unique identifier.                                                                                                                                                                                                                              |
-| `price`                 | string    | Current variation price. <i class="label label-info">read-only</i>                                                                                                                                                                              |
-| `regular_price`         | string    | Variation regular price.                                                                                                                                                                                                                        |
-| `sale_price`            | string    | Variation sale price.                                                                                                                                                                                                                           |
-| `date_on_sale_from`     | date-time | Start date of sale price, in the site's timezone.                                                                                                                                                                                               |
-| `date_on_sale_from_gmt` | date-time | Start date of sale price, as GMT.                                                                                                                                                                                                               |
-| `date_on_sale_to`       | date-time | End date of sale price, in the site's timezone.                                                                                                                                                                                                 |
-| `date_on_sale_to_gmt`   | date-time | End date of sale price, as GMT.                                                                                                                                                                                                                 |
-| `on_sale`               | boolean   | Shows if the variation is on sale. <i class="label label-info">read-only</i>                                                                                                                                                                    |
-| `status`                | string    | Variation status. Options: `draft`, `pending`, `private` and `publish`. Default is `publish`.                                                                                                                                                   |
-| `purchasable`           | boolean   | Shows if the variation can be bought. <i class="label label-info">read-only</i>                                                                                                                                                                 |
-| `virtual`               | boolean   | If the variation is virtual. Default is `false`.                                                                                                                                                                                                |
-| `downloadable`          | boolean   | If the variation is downloadable. Default is `false`.                                                                                                                                                                                           |
-| `downloads`             | array     | List of downloadable files. See [Product variation - Downloads properties](#product-variation-downloads-properties)                                                                                                                             |
-| `download_limit`        | integer   | Number of times downloadable files can be downloaded after purchase. Default is `-1`.                                                                                                                                                           |
-| `download_expiry`       | integer   | Number of days until access to downloadable files expires. Default is `-1`.                                                                                                                                                                     |
-| `tax_status`            | string    | Tax status. Options: `taxable`, `shipping` and `none`. Default is `taxable`.                                                                                                                                                                    |
-| `tax_class`             | string    | Tax class.                                                                                                                                                                                                                                      |
-| `manage_stock`          | boolean   | Stock management at variation level. Default is `false`.                                                                                                                                                                                        |
-| `stock_quantity`        | integer   | Stock quantity.                                                                                                                                                                                                                                 |
-| `stock_status`          | string    | Controls the stock status of the product. Options: `instock`, `outofstock`, `onbackorder`. Default is `instock`.                                                                                                                                |
-| `backorders`            | string    | If managing stock, this controls if backorders are allowed. Options: `no`, `notify` and `yes`. Default is `no`.                                                                                                                                 |
-| `backorders_allowed`    | boolean   | Shows if backorders are allowed. <i class="label label-info">read-only</i>                                                                                                                                                                      |
-| `backordered`           | boolean   | Shows if the variation is on backordered. <i class="label label-info">read-only</i>                                                                                                                                                             |
-| `weight`                | string    | Variation weight.                                                                                                                                                                                                                               |
-| `dimensions`            | object    | Variation dimensions. See [Product variation - Dimensions properties](#product-variation-dimensions-properties)                                                                                                                                 |
-| `shipping_class`        | string    | Shipping class slug.                                                                                                                                                                                                                            |
-| `shipping_class_id`     | string    | Shipping class ID. <i class="label label-info">read-only</i>                                                                                                                                                                                    |
-| `image`                 | object    | Variation image data. See [Product variation - Image properties](#product-variation-image-properties)                                                                                                                                           |
-| `attributes`            | array     | List of attributes. See [Product variation - Attributes properties](#product-variation-attributes-properties)                                                                                                                                   |
-| `menu_order`            | integer   | Menu order, used to custom sort products.                                                                                                                                                                                                       |   
-| `meta_data`             | array     | Meta data. See [Product variation - Meta data properties](#product-variation-meta-data-properties)                                                                                                                                              |
-| `purchase_price`        | number    | Product's purchase price. <i class="label label-atum">ATUM</i>                                                                                                                                                                                  |
-| `supplier_id`           | integer   | The ID of the ATUM Supplier that is linked to this product. <i class="label label-atum">ATUM</i>                                                                                                                                                |
-| `supplier_sku`          | string    | The Supplier's SKU for this product. <i class="label label-atum">ATUM</i>                                                                                                                                                                       |
-| `atum_controlled`       | boolean   | Whether this product is being controlled by ATUM. Default is `false`. <i class="label label-atum">ATUM</i>                                                                                                                                      |
-| `out_stock_date`        | date-time | The date when this product run out of stock. <i class="label label-atum">ATUM</i>                                                                                                                                                               |
-| `out_stock_threshold`   | number    | Out of stock threshold at product level. <i class="label label-atum">ATUM</i>                                                                                                                                                                   |
-| `inbound_stock`         | number    | Product's inbound stock. <i class="label label-atum">ATUM</i>                                                                                                                                                                                   |
-| `stock_on_hold`         | number    | Product's stock on hold. <i class="label label-atum">ATUM</i>                                                                                                                                                                                   |
-| `sold_today`            | number    | Units sold today. <i class="label label-atum">ATUM</i>                                                                                                                                                                                          |
-| `sales_last_days`       | number    | Sales the last 14 days. <i class="label label-atum">ATUM</i>                                                                                                                                                                                    |
-| `reserved_stock`        | number    | Stock set as 'reserved_stock' within Inventory Logs. <i class="label label-atum">ATUM</i>                                                                                                                                                       |
-| `customer_returns`      | number    | Stock set as 'customer returns' within Inventory Logs. <i class="label label-atum">ATUM</i>                                                                                                                                                     |
-| `warehouse_damage`      | number    | Stock set as 'warehouse damage' within Inventory Logs. <i class="label label-atum">ATUM</i>                                                                                                                                                     |
-| `lost_in_post`          | number    | Stock set as 'lost in post' within Inventory Logs. <i class="label label-atum">ATUM</i>                                                                                                                                                         |
-| `other_logs`            | number    | Stock set as 'other' within Inventory Logs. <i class="label label-atum">ATUM</i>                                                                                                                                                                |
-| `out_stock_days`        | integer   | The number of days that the product is Out of stock. <i class="label label-atum">ATUM</i>                                                                                                                                                       |
-| `lost_sales`            | number    | Product lost sales. <i class="label label-atum">ATUM</i>                                                                                                                                                                                        |
-| `update_date`           | date-time | Last date when the ATUM product data was calculated and saved for this product. <i class="label label-atum">ATUM</i>                                                                                                                            |
-| `mi_inventories`        | array     | An array of inventory IDs linked to the product (if any). <i class="label label-addon">Multi-Inventory</i> <i class="label label-atum">ATUM</i> <i class="label label-info">read-only</i>                                                       |
-| `multi_inventory`       | string    | The Multi Inventory status for this product. Options: `yes`, `no`, `global`. <i class="label label-addon">Multi-Inventory</i> <i class="label label-atum">ATUM</i>                                                                              |
-| `inventory_sorting_mode`| string    | The sorting mode specified for inventory selling priority. Options: `fifo`, `lifo`, `bbe`, `manual`, `global`. <i class="label label-addon">Multi-Inventory</i> <i class="label label-atum">ATUM</i>                                            |
-| `inventory_iteration`   | string    | What to do when the first selling inventory runs out of stock. Options: `use_next`, `out_of_stock`, `global`. <i class="label label-addon">Multi-Inventory</i> <i class="label label-atum">ATUM</i>                                             |
-| `expirable_inventories` | string    | Set the inventories as 'Out of Stock' when reaching their BBE dates. Options: `yes`, `no`, `global`. <i class="label label-addon">Multi-Inventory</i> <i class="label label-atum">ATUM</i>                                                      |
-| `price_per_inventory`   | string    | Allow distinct inventories to have distinct prices. Options: `yes`, `no`, `global`. <i class="label label-addon">Multi-Inventory</i> <i class="label label-atum">ATUM</i>                                                                       |
-| `linked_bom`            | array     | The BOM linked to the product with their quantities. See [Product - Linked BOM properties](#product-variation-linked-bom-properties-atum-product-levels) <i class="label label-addon">Product Levels</i> <i class="label label-atum">ATUM</i>   |
-| `bom_sellable`          | array     | If the product is a BOM, indicates whether the product is sellable. <i class="label label-addon">Product Levels</i> <i class="label label-atum">ATUM</i>                                                                                        |
-| `minimum_threshold`     | number    | If the product is a BOM, indicates the product's minimum threshold. <i class="label label-addon">Product Levels</i> <i class="label label-atum">ATUM</i>                                                                                        |
-| `available_to_purchase` | number    | If the product is a BOM, indicates the product's available to purchase amount. <i class="label label-addon">Product Levels</i> <i class="label label-atum">ATUM</i>                                                                             |
-| `selling_priority`      | integer   | If the product is a BOM, indicates the product's selling priority. <i class="label label-addon">Product Levels</i> <i class="label label-atum">ATUM</i>                                                                                         |
-| `calculated_stock`      | number    | If the BOM stock control is enabled and the product has linked BOM, it indicates the calculated stock quantity. <i class="label label-addon">Product Levels</i> <i class="label label-atum">ATUM</i>                                            |
-| `sync_purchase_price`   | boolean   | Whether to sync the product's purchase price with the BOM's purchase price. Default is `false`, <i class="label label-addon">Product Levels</i> <i class="label label-atum">ATUM</i>                                                            |
+| Attribute                | Type      | Description                                                                                                                                                                                                                                   |
+|--------------------------|-----------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `id`                     | integer   | Unique identifier for the resource. <i class="label label-info">read-only</i>                                                                                                                                                                 |
+| `date_created`           | date-time | The date the variation was created, in the site's timezone. <i class="label label-info">read-only</i>                                                                                                                                         |
+| `date_created_gmt`       | date-time | The date the variation was created, as GMT. <i class="label label-info">read-only</i>                                                                                                                                                         |
+| `date_modified`          | date-time | The date the variation was last modified, in the site's timezone. <i class="label label-info">read-only</i>                                                                                                                                   |
+| `date_modified_gmt`      | date-time | The date the variation was last modified, as GMT. <i class="label label-info">read-only</i>                                                                                                                                                   |
+| `description`            | string    | Variation description.                                                                                                                                                                                                                        |
+| `permalink`              | string    | Variation URL. <i class="label label-info">read-only</i>                                                                                                                                                                                      |
+| `sku`                    | string    | Unique identifier.                                                                                                                                                                                                                            |
+| `price`                  | string    | Current variation price. <i class="label label-info">read-only</i>                                                                                                                                                                            |
+| `regular_price`          | string    | Variation regular price.                                                                                                                                                                                                                      |
+| `sale_price`             | string    | Variation sale price.                                                                                                                                                                                                                         |
+| `date_on_sale_from`      | date-time | Start date of sale price, in the site's timezone.                                                                                                                                                                                             |
+| `date_on_sale_from_gmt`  | date-time | Start date of sale price, as GMT.                                                                                                                                                                                                             |
+| `date_on_sale_to`        | date-time | End date of sale price, in the site's timezone.                                                                                                                                                                                               |
+| `date_on_sale_to_gmt`    | date-time | End date of sale price, as GMT.                                                                                                                                                                                                               |
+| `on_sale`                | boolean   | Shows if the variation is on sale. <i class="label label-info">read-only</i>                                                                                                                                                                  |
+| `status`                 | string    | Variation status. Options: `draft`, `pending`, `private` and `publish`. Default is `publish`.                                                                                                                                                 |
+| `purchasable`            | boolean   | Shows if the variation can be bought. <i class="label label-info">read-only</i>                                                                                                                                                               |
+| `virtual`                | boolean   | If the variation is virtual. Default is `false`.                                                                                                                                                                                              |
+| `downloadable`           | boolean   | If the variation is downloadable. Default is `false`.                                                                                                                                                                                         |
+| `downloads`              | array     | List of downloadable files. See [Product variation - Downloads properties](#product-variation-downloads-properties)                                                                                                                           |
+| `download_limit`         | integer   | Number of times downloadable files can be downloaded after purchase. Default is `-1`.                                                                                                                                                         |
+| `download_expiry`        | integer   | Number of days until access to downloadable files expires. Default is `-1`.                                                                                                                                                                   |
+| `tax_status`             | string    | Tax status. Options: `taxable`, `shipping` and `none`. Default is `taxable`.                                                                                                                                                                  |
+| `tax_class`              | string    | Tax class.                                                                                                                                                                                                                                    |
+| `manage_stock`           | boolean   | Stock management at variation level. Default is `false`.                                                                                                                                                                                      |
+| `stock_quantity`         | integer   | Stock quantity.                                                                                                                                                                                                                               |
+| `stock_status`           | string    | Controls the stock status of the product. Options: `instock`, `outofstock`, `onbackorder`. Default is `instock`.                                                                                                                              |
+| `backorders`             | string    | If managing stock, this controls if backorders are allowed. Options: `no`, `notify` and `yes`. Default is `no`.                                                                                                                               |
+| `backorders_allowed`     | boolean   | Shows if backorders are allowed. <i class="label label-info">read-only</i>                                                                                                                                                                    |
+| `backordered`            | boolean   | Shows if the variation is on backordered. <i class="label label-info">read-only</i>                                                                                                                                                           |
+| `weight`                 | string    | Variation weight.                                                                                                                                                                                                                             |
+| `dimensions`             | object    | Variation dimensions. See [Product variation - Dimensions properties](#product-variation-dimensions-properties)                                                                                                                               |
+| `shipping_class`         | string    | Shipping class slug.                                                                                                                                                                                                                          |
+| `shipping_class_id`      | string    | Shipping class ID. <i class="label label-info">read-only</i>                                                                                                                                                                                  |
+| `image`                  | object    | Variation image data. See [Product variation - Image properties](#product-variation-image-properties)                                                                                                                                         |
+| `attributes`             | array     | List of attributes. See [Product variation - Attributes properties](#product-variation-attributes-properties)                                                                                                                                 |
+| `menu_order`             | integer   | Menu order, used to custom sort products.                                                                                                                                                                                                     |   
+| `meta_data`              | array     | Meta data. See [Product variation - Meta data properties](#product-variation-meta-data-properties)                                                                                                                                            |
+| `purchase_price`         | number    | Product's purchase price. <i class="label label-atum">ATUM</i>                                                                                                                                                                                |
+| `supplier_id`            | integer   | The ID of the ATUM Supplier that is linked to this product. <i class="label label-atum">ATUM</i>                                                                                                                                              |
+| `supplier_sku`           | string    | The Supplier's SKU for this product. <i class="label label-atum">ATUM</i>                                                                                                                                                                     |
+| `barcode`                | string    | The barcode for this product. <i class="label label-atum">ATUM</i>                                                                                                                                                                            |
+| `atum_controlled`        | boolean   | Whether this product is being controlled by ATUM. Default is `false`. <i class="label label-atum">ATUM</i>                                                                                                                                    |
+| `out_stock_date`         | date-time | The date when this product run out of stock. <i class="label label-atum">ATUM</i>                                                                                                                                                             |
+| `out_stock_threshold`    | number    | Out of stock threshold at product level. <i class="label label-atum">ATUM</i>                                                                                                                                                                 |
+| `inbound_stock`          | number    | Product's inbound stock. <i class="label label-atum">ATUM</i>                                                                                                                                                                                 |
+| `stock_on_hold`          | number    | Product's stock on hold. <i class="label label-atum">ATUM</i>                                                                                                                                                                                 |
+| `sold_today`             | number    | Units sold today. <i class="label label-atum">ATUM</i>                                                                                                                                                                                        |
+| `sales_last_days`        | number    | Sales the last 14 days. <i class="label label-atum">ATUM</i>                                                                                                                                                                                  |
+| `reserved_stock`         | number    | Stock set as 'reserved_stock' within Inventory Logs. <i class="label label-atum">ATUM</i>                                                                                                                                                     |
+| `customer_returns`       | number    | Stock set as 'customer returns' within Inventory Logs. <i class="label label-atum">ATUM</i>                                                                                                                                                   |
+| `warehouse_damage`       | number    | Stock set as 'warehouse damage' within Inventory Logs. <i class="label label-atum">ATUM</i>                                                                                                                                                   |
+| `lost_in_post`           | number    | Stock set as 'lost in post' within Inventory Logs. <i class="label label-atum">ATUM</i>                                                                                                                                                       |
+| `other_logs`             | number    | Stock set as 'other' within Inventory Logs. <i class="label label-atum">ATUM</i>                                                                                                                                                              |
+| `out_stock_days`         | integer   | The number of days that the product is Out of stock. <i class="label label-atum">ATUM</i>                                                                                                                                                     |
+| `lost_sales`             | number    | Product lost sales. <i class="label label-atum">ATUM</i>                                                                                                                                                                                      |
+| `update_date`            | date-time | Last date when the ATUM product data was calculated and saved for this product. <i class="label label-atum">ATUM</i>                                                                                                                          |
+| `mi_inventories`         | array     | An array of inventory IDs linked to the product (if any). <i class="label label-addon">Multi-Inventory</i> <i class="label label-atum">ATUM</i> <i class="label label-info">read-only</i>                                                     |
+| `multi_inventory`        | string    | The Multi Inventory status for this product. Options: `yes`, `no`, `global`. <i class="label label-addon">Multi-Inventory</i> <i class="label label-atum">ATUM</i>                                                                            |
+| `inventory_sorting_mode` | string    | The sorting mode specified for inventory selling priority. Options: `fifo`, `lifo`, `bbe`, `manual`, `global`. <i class="label label-addon">Multi-Inventory</i> <i class="label label-atum">ATUM</i>                                          |
+| `inventory_iteration`    | string    | What to do when the first selling inventory runs out of stock. Options: `use_next`, `out_of_stock`, `global`. <i class="label label-addon">Multi-Inventory</i> <i class="label label-atum">ATUM</i>                                           |
+| `expirable_inventories`  | string    | Set the inventories as 'Out of Stock' when reaching their BBE dates. Options: `yes`, `no`, `global`. <i class="label label-addon">Multi-Inventory</i> <i class="label label-atum">ATUM</i>                                                    |
+| `price_per_inventory`    | string    | Allow distinct inventories to have distinct prices. Options: `yes`, `no`, `global`. <i class="label label-addon">Multi-Inventory</i> <i class="label label-atum">ATUM</i>                                                                     |
+| `linked_bom`             | array     | The BOM linked to the product with their quantities. See [Product - Linked BOM properties](#product-variation-linked-bom-properties-atum-product-levels) <i class="label label-addon">Product Levels</i> <i class="label label-atum">ATUM</i> |
+| `bom_sellable`           | array     | If the product is a BOM, indicates whether the product is sellable. <i class="label label-addon">Product Levels</i> <i class="label label-atum">ATUM</i>                                                                                      |
+| `minimum_threshold`      | number    | If the product is a BOM, indicates the product's minimum threshold. <i class="label label-addon">Product Levels</i> <i class="label label-atum">ATUM</i>                                                                                      |
+| `available_to_purchase`  | number    | If the product is a BOM, indicates the product's available to purchase amount. <i class="label label-addon">Product Levels</i> <i class="label label-atum">ATUM</i>                                                                           |
+| `selling_priority`       | integer   | If the product is a BOM, indicates the product's selling priority. <i class="label label-addon">Product Levels</i> <i class="label label-atum">ATUM</i>                                                                                       |
+| `calculated_stock`       | number    | If the BOM stock control is enabled and the product has linked BOM, it indicates the calculated stock quantity. <i class="label label-addon">Product Levels</i> <i class="label label-atum">ATUM</i>                                          |
+| `sync_purchase_price`    | boolean   | Whether to sync the product's purchase price with the BOM's purchase price. Default is `false`, <i class="label label-addon">Product Levels</i> <i class="label label-atum">ATUM</i>                                                          |
 
 ### Product variation - Downloads properties ###
 
@@ -323,6 +324,7 @@ woocommerce.post("products/22/variations", data).parsed_response
     "purchase_price": 6.5,
     "supplier_id": 0,
     "supplier_sku": "",
+    "barcode": "",
     "atum_controlled": true,
     "out_stock_date": null,
     "out_stock_threshold": 0,
@@ -467,6 +469,7 @@ woocommerce.get("products/22/variations/23").parsed_response
     "purchase_price": 8,
     "supplier_id": 399,
     "supplier_sku": "",
+    "barcode": "",
     "atum_controlled": true,
     "out_stock_date": null,
     "out_stock_threshold": 0,
@@ -619,6 +622,7 @@ woocommerce.get("products/22/variations").parsed_response
         "purchase_price": 6.5,
         "supplier_id": 0,
         "supplier_sku": "",
+        "barcode": "",
         "atum_controlled": false,
         "out_stock_date": null,
         "out_stock_threshold": 0,
@@ -718,6 +722,7 @@ woocommerce.get("products/22/variations").parsed_response
         "purchase_price": 12,
         "supplier_id": 386,
         "supplier_sku": "",
+        "barcode": "",
         "atum_controlled": true,
         "out_stock_date": null,
         "out_stock_threshold": 0,
@@ -817,6 +822,7 @@ woocommerce.get("products/22/variations").parsed_response
         "purchase_price": 8,
         "supplier_id": 399,
         "supplier_sku": "",
+        "barcode": "",
         "atum_controlled": true,
         "out_stock_date": null,
         "out_stock_threshold": 0,
@@ -866,42 +872,43 @@ woocommerce.get("products/22/variations").parsed_response
 
 #### Available parameters ####
 
-| Parameter               | Type    | Description                                                                                                                                                                                                       |
-|-------------------------|---------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `context`               | string  | Scope under which the request is made; determines fields present in response. Options: `view` and `edit`. Default is `view`.                                                                                      |
-| `page`                  | integer | Current page of the collection. Default is `1`.                                                                                                                                                                   |
-| `per_page`              | integer | Maximum number of items to be returned in result set. Default is `10`.                                                                                                                                            |
-| `search`                | string  | Limit results to those matching a string.                                                                                                                                                                         |
-| `after`                 | string  | Limit response to resources published after a given ISO8601 compliant date.                                                                                                                                       |
-| `before`                | string  | Limit response to resources published before a given ISO8601 compliant date.                                                                                                                                      |
-| `modified_after`        | string  | Limit response to resources modified after a given ISO8601 compliant date.                                                                                                                                        |
-| `modified_before`       | string  | Limit response to resources modified before a given ISO8601 compliant date.                                                                                                                                       |
-| `exclude`               | array   | Ensure result set excludes specific IDs.                                                                                                                                                                          |
-| `include`               | array   | Limit result set to specific ids.                                                                                                                                                                                 |
-| `offset`                | integer | Offset the result set by a specific number of items.                                                                                                                                                              |
-| `order`                 | string  | Order sort attribute ascending or descending. Options: `asc` and `desc`. Default is `desc`.                                                                                                                       |
-| `orderby`               | string  | Sort collection by object attribute. Options: `date`, `id`, `include`, `title` and `slug`. Default is `date`.                                                                                                     |
-| `parent`                | array   | Limit result set to those of particular parent IDs.                                                                                                                                                               |
-| `parent_exclude`        | array   | Limit result set to all items except those of a particular parent ID.                                                                                                                                             |
-| `slug`                  | string  | Limit result set to products with a specific slug.                                                                                                                                                                |
-| `status`                | string  | Limit result set to products assigned a specific status. Options: `any`, `draft`, `pending`, `private` and `publish`. Default is `any`.                                                                           |
-| `sku`                   | string  | Limit result set to products with a specific SKU.                                                                                                                                                                 |
-| `tax_class`             | string  | Limit result set to products with a specific tax class. Default options: `standard`, `reduced-rate` and `zero-rate`.                                                                                              |
-| `on_sale`               | boolean | Limit result set to products on sale.                                                                                                                                                                             |
-| `min_price`             | string  | Limit result set to products based on a minimum price.                                                                                                                                                            |
-| `max_price`             | string  | Limit result set to products based on a maximum price.                                                                                                                                                            |
-| `stock_status`          | string  | Limit result set to products with specified stock status. Options: `instock`, `outofstock` and `onbackorder`.                                                                                                     |
-| `atum_controlled`       | boolean | Limit result set to products controlled by ATUM. <i class="label label-atum">ATUM</i>                                                                                                                             |
-| `min_purchase_price`    | number  | Limit result set to products based on a minimum purchase price. <i class="label label-atum">ATUM</i>                                                                                                              |
-| `max_purchase_price`    | number  | Limit result set to products based on a maximum purchase price. <i class="label label-atum">ATUM</i>                                                                                                              |
-| `supplier`              | integer | Limit result set to products linked to the specified Supplier ID. <i class="label label-atum">ATUM</i>                                                                                                            |
-| `supplier_sku`          | integer | Limit result set to products with a specific Supplier SKU. <i class="label label-atum">ATUM</i>                                                                                                                   |
-| `multi_inventory`       | string  | Limit result set to products with a specific Multi-Inventory status. Options: `yes`, `no` and `global`. <i class="label label-addon">Multi-Inventory</i> <i class="label label-atum">ATUM</i>                     |
-| `inventory_sorting_mode`| string  | Limit result set to products with a specific inventory sorting mode. Options: `fifo`, `lifo`, `bbe`, `manual` and `global`. <i class="label label-addon">Multi-Inventory</i> <i class="label label-atum">ATUM</i> |
-| `inventory_iteration`   | string  | Limit result set to products with a specific inventory iteration. Options: `use_next`, `out_of_stock` and `global`. <i class="label label-addon">Multi-Inventory</i> <i class="label label-atum">ATUM</i>         |
-| `expirable_inventories` | string  | Limit result set to products with a specific expirable inventories option. Options: `yes`, `no` and `global`. <i class="label label-addon">Multi-Inventory</i> <i class="label label-atum">ATUM</i>               |
-| `price_per_inventory`   | string  | Limit result set to products with a specific price per inventory option. Options: `yes`, `no` and `global`. <i class="label label-addon">Multi-Inventory</i> <i class="label label-atum">ATUM</i>                 |
-| `bom_sellable`          | boolean | Limit result set to sellable BOM products. It should be used in conjunction with the `type` set to any BOM type. <i class="label label-addon">Product Levels</i> <i class="label label-atum">ATUM</i>             |
+| Parameter                | Type    | Description                                                                                                                                                                                                       |
+|--------------------------|---------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `context`                | string  | Scope under which the request is made; determines fields present in response. Options: `view` and `edit`. Default is `view`.                                                                                      |
+| `page`                   | integer | Current page of the collection. Default is `1`.                                                                                                                                                                   |
+| `per_page`               | integer | Maximum number of items to be returned in result set. Default is `10`.                                                                                                                                            |
+| `search`                 | string  | Limit results to those matching a string.                                                                                                                                                                         |
+| `after`                  | string  | Limit response to resources published after a given ISO8601 compliant date.                                                                                                                                       |
+| `before`                 | string  | Limit response to resources published before a given ISO8601 compliant date.                                                                                                                                      |
+| `modified_after`         | string  | Limit response to resources modified after a given ISO8601 compliant date.                                                                                                                                        |
+| `modified_before`        | string  | Limit response to resources modified before a given ISO8601 compliant date.                                                                                                                                       |
+| `exclude`                | array   | Ensure result set excludes specific IDs.                                                                                                                                                                          |
+| `include`                | array   | Limit result set to specific ids.                                                                                                                                                                                 |
+| `offset`                 | integer | Offset the result set by a specific number of items.                                                                                                                                                              |
+| `order`                  | string  | Order sort attribute ascending or descending. Options: `asc` and `desc`. Default is `desc`.                                                                                                                       |
+| `orderby`                | string  | Sort collection by object attribute. Options: `date`, `id`, `include`, `title` and `slug`. Default is `date`.                                                                                                     |
+| `parent`                 | array   | Limit result set to those of particular parent IDs.                                                                                                                                                               |
+| `parent_exclude`         | array   | Limit result set to all items except those of a particular parent ID.                                                                                                                                             |
+| `slug`                   | string  | Limit result set to products with a specific slug.                                                                                                                                                                |
+| `status`                 | string  | Limit result set to products assigned a specific status. Options: `any`, `draft`, `pending`, `private` and `publish`. Default is `any`.                                                                           |
+| `sku`                    | string  | Limit result set to products with a specific SKU.                                                                                                                                                                 |
+| `tax_class`              | string  | Limit result set to products with a specific tax class. Default options: `standard`, `reduced-rate` and `zero-rate`.                                                                                              |
+| `on_sale`                | boolean | Limit result set to products on sale.                                                                                                                                                                             |
+| `min_price`              | string  | Limit result set to products based on a minimum price.                                                                                                                                                            |
+| `max_price`              | string  | Limit result set to products based on a maximum price.                                                                                                                                                            |
+| `stock_status`           | string  | Limit result set to products with specified stock status. Options: `instock`, `outofstock` and `onbackorder`.                                                                                                     |
+| `atum_controlled`        | boolean | Limit result set to products controlled by ATUM. <i class="label label-atum">ATUM</i>                                                                                                                             |
+| `min_purchase_price`     | number  | Limit result set to products based on a minimum purchase price. <i class="label label-atum">ATUM</i>                                                                                                              |
+| `max_purchase_price`     | number  | Limit result set to products based on a maximum purchase price. <i class="label label-atum">ATUM</i>                                                                                                              |
+| `supplier`               | integer | Limit result set to products linked to the specified Supplier ID. <i class="label label-atum">ATUM</i>                                                                                                            |
+| `supplier_sku`           | string  | Limit result set to products with a specific Supplier SKU. <i class="label label-atum">ATUM</i>                                                                                                                   |
+| `barcode`                | string  | Limit result set to products with a specific barcode. <i class="label label-atum">ATUM</i>                                                                                                                        |
+| `multi_inventory`        | string  | Limit result set to products with a specific Multi-Inventory status. Options: `yes`, `no` and `global`. <i class="label label-addon">Multi-Inventory</i> <i class="label label-atum">ATUM</i>                     |
+| `inventory_sorting_mode` | string  | Limit result set to products with a specific inventory sorting mode. Options: `fifo`, `lifo`, `bbe`, `manual` and `global`. <i class="label label-addon">Multi-Inventory</i> <i class="label label-atum">ATUM</i> |
+| `inventory_iteration`    | string  | Limit result set to products with a specific inventory iteration. Options: `use_next`, `out_of_stock` and `global`. <i class="label label-addon">Multi-Inventory</i> <i class="label label-atum">ATUM</i>         |
+| `expirable_inventories`  | string  | Limit result set to products with a specific expirable inventories option. Options: `yes`, `no` and `global`. <i class="label label-addon">Multi-Inventory</i> <i class="label label-atum">ATUM</i>               |
+| `price_per_inventory`    | string  | Limit result set to products with a specific price per inventory option. Options: `yes`, `no` and `global`. <i class="label label-addon">Multi-Inventory</i> <i class="label label-atum">ATUM</i>                 |
+| `bom_sellable`           | boolean | Limit result set to sellable BOM products. It should be used in conjunction with the `type` set to any BOM type. <i class="label label-addon">Product Levels</i> <i class="label label-atum">ATUM</i>             |
 
 ## List all variations ##
 
@@ -1001,6 +1008,7 @@ woocommerce.get("atum/products-variations").parsed_response
 		"purchase_price": null,
 		"supplier_id": null,
 		"supplier_sku": "",
+		"barcode": "",
 		"atum_controlled": true,
 		"out_stock_date": null,
 		"out_stock_threshold": null,
@@ -1101,6 +1109,7 @@ woocommerce.get("atum/products-variations").parsed_response
 		"purchase_price": null,
 		"supplier_id": null,
 		"supplier_sku": "",
+		"barcode": "",
 		"atum_controlled": true,
 		"out_stock_date": null,
 		"out_stock_threshold": null,
@@ -1201,6 +1210,7 @@ woocommerce.get("atum/products-variations").parsed_response
 		"purchase_price": null,
 		"supplier_id": null,
 		"supplier_sku": "",
+		"barcode": "",
 		"atum_controlled": false,
 		"out_stock_date": null,
 		"out_stock_threshold": null,
@@ -1252,42 +1262,43 @@ woocommerce.get("atum/products-variations").parsed_response
 
 #### Available parameters ####
 
-| Parameter               | Type    | Description                                                                                                                                                                                                       |
-|-------------------------|---------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `context`               | string  | Scope under which the request is made; determines fields present in response. Options: `view` and `edit`. Default is `view`.                                                                                      |
-| `page`                  | integer | Current page of the collection. Default is `1`.                                                                                                                                                                   |
-| `per_page`              | integer | Maximum number of items to be returned in result set. Default is `10`.                                                                                                                                            |
-| `search`                | string  | Limit results to those matching a string.                                                                                                                                                                         |
-| `after`                 | string  | Limit response to resources published after a given ISO8601 compliant date.                                                                                                                                       |
-| `before`                | string  | Limit response to resources published before a given ISO8601 compliant date.                                                                                                                                      |
-| `modified_after`        | string  | Limit response to resources modified after a given ISO8601 compliant date.                                                                                                                                        |
-| `modified_before`       | string  | Limit response to resources modified before a given ISO8601 compliant date.                                                                                                                                       |
-| `exclude`               | array   | Ensure result set excludes specific IDs.                                                                                                                                                                          |
-| `include`               | array   | Limit result set to specific ids.                                                                                                                                                                                 |
-| `offset`                | integer | Offset the result set by a specific number of items.                                                                                                                                                              |
-| `order`                 | string  | Order sort attribute ascending or descending. Options: `asc` and `desc`. Default is `desc`.                                                                                                                       |
-| `orderby`               | string  | Sort collection by object attribute. Options: `date`, `id`, `include`, `title` and `slug`. Default is `date`.                                                                                                     |
-| `parent`                | array   | Limit result set to those of particular parent IDs.                                                                                                                                                               |
-| `parent_exclude`        | array   | Limit result set to all items except those of a particular parent ID.                                                                                                                                             |
-| `slug`                  | string  | Limit result set to products with a specific slug.                                                                                                                                                                |
-| `status`                | string  | Limit result set to products assigned a specific status. Options: `any`, `draft`, `pending`, `private` and `publish`. Default is `any`.                                                                           |
-| `sku`                   | string  | Limit result set to products with a specific SKU.                                                                                                                                                                 |
-| `tax_class`             | string  | Limit result set to products with a specific tax class. Default options: `standard`, `reduced-rate` and `zero-rate`.                                                                                              |
-| `on_sale`               | boolean | Limit result set to products on sale.                                                                                                                                                                             |
-| `min_price`             | string  | Limit result set to products based on a minimum price.                                                                                                                                                            |
-| `max_price`             | string  | Limit result set to products based on a maximum price.                                                                                                                                                            |
-| `stock_status`          | string  | Limit result set to products with specified stock status. Options: `instock`, `outofstock` and `onbackorder`.                                                                                                     |
-| `atum_controlled`       | boolean | Limit result set to products controlled by ATUM. <i class="label label-atum">ATUM</i>                                                                                                                             |
-| `min_purchase_price`    | number  | Limit result set to products based on a minimum purchase price. <i class="label label-atum">ATUM</i>                                                                                                              |
-| `max_purchase_price`    | number  | Limit result set to products based on a maximum purchase price. <i class="label label-atum">ATUM</i>                                                                                                              |
-| `supplier`              | integer | Limit result set to products linked to the specified Supplier ID. <i class="label label-atum">ATUM</i>                                                                                                            |
-| `supplier_sku`          | integer | Limit result set to products with a specific Supplier SKU. <i class="label label-atum">ATUM</i>                                                                                                                   |
-| `multi_inventory`       | string  | Limit result set to products with a specific Multi-Inventory status. Options: `yes`, `no` and `global`. <i class="label label-addon">Multi-Inventory</i> <i class="label label-atum">ATUM</i>                     |
-| `inventory_sorting_mode`| string  | Limit result set to products with a specific inventory sorting mode. Options: `fifo`, `lifo`, `bbe`, `manual` and `global`. <i class="label label-addon">Multi-Inventory</i> <i class="label label-atum">ATUM</i> |
-| `inventory_iteration`   | string  | Limit result set to products with a specific inventory iteration. Options: `use_next`, `out_of_stock` and `global`. <i class="label label-addon">Multi-Inventory</i> <i class="label label-atum">ATUM</i>         |
-| `expirable_inventories` | string  | Limit result set to products with a specific expirable inventories option. Options: `yes`, `no` and `global`. <i class="label label-addon">Multi-Inventory</i> <i class="label label-atum">ATUM</i>               |
-| `price_per_inventory`   | string  | Limit result set to products with a specific price per inventory option. Options: `yes`, `no` and `global`. <i class="label label-addon">Multi-Inventory</i> <i class="label label-atum">ATUM</i>                 |
-| `bom_sellable`          | boolean | Limit result set to sellable BOM products. It should be used in conjunction with the `type` set to any BOM type. <i class="label label-addon">Product Levels</i> <i class="label label-atum">ATUM</i>             |
+| Parameter                | Type    | Description                                                                                                                                                                                                       |
+|--------------------------|---------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `context`                | string  | Scope under which the request is made; determines fields present in response. Options: `view` and `edit`. Default is `view`.                                                                                      |
+| `page`                   | integer | Current page of the collection. Default is `1`.                                                                                                                                                                   |
+| `per_page`               | integer | Maximum number of items to be returned in result set. Default is `10`.                                                                                                                                            |
+| `search`                 | string  | Limit results to those matching a string.                                                                                                                                                                         |
+| `after`                  | string  | Limit response to resources published after a given ISO8601 compliant date.                                                                                                                                       |
+| `before`                 | string  | Limit response to resources published before a given ISO8601 compliant date.                                                                                                                                      |
+| `modified_after`         | string  | Limit response to resources modified after a given ISO8601 compliant date.                                                                                                                                        |
+| `modified_before`        | string  | Limit response to resources modified before a given ISO8601 compliant date.                                                                                                                                       |
+| `exclude`                | array   | Ensure result set excludes specific IDs.                                                                                                                                                                          |
+| `include`                | array   | Limit result set to specific ids.                                                                                                                                                                                 |
+| `offset`                 | integer | Offset the result set by a specific number of items.                                                                                                                                                              |
+| `order`                  | string  | Order sort attribute ascending or descending. Options: `asc` and `desc`. Default is `desc`.                                                                                                                       |
+| `orderby`                | string  | Sort collection by object attribute. Options: `date`, `id`, `include`, `title` and `slug`. Default is `date`.                                                                                                     |
+| `parent`                 | array   | Limit result set to those of particular parent IDs.                                                                                                                                                               |
+| `parent_exclude`         | array   | Limit result set to all items except those of a particular parent ID.                                                                                                                                             |
+| `slug`                   | string  | Limit result set to products with a specific slug.                                                                                                                                                                |
+| `status`                 | string  | Limit result set to products assigned a specific status. Options: `any`, `draft`, `pending`, `private` and `publish`. Default is `any`.                                                                           |
+| `sku`                    | string  | Limit result set to products with a specific SKU.                                                                                                                                                                 |
+| `tax_class`              | string  | Limit result set to products with a specific tax class. Default options: `standard`, `reduced-rate` and `zero-rate`.                                                                                              |
+| `on_sale`                | boolean | Limit result set to products on sale.                                                                                                                                                                             |
+| `min_price`              | string  | Limit result set to products based on a minimum price.                                                                                                                                                            |
+| `max_price`              | string  | Limit result set to products based on a maximum price.                                                                                                                                                            |
+| `stock_status`           | string  | Limit result set to products with specified stock status. Options: `instock`, `outofstock` and `onbackorder`.                                                                                                     |
+| `atum_controlled`        | boolean | Limit result set to products controlled by ATUM. <i class="label label-atum">ATUM</i>                                                                                                                             |
+| `min_purchase_price`     | number  | Limit result set to products based on a minimum purchase price. <i class="label label-atum">ATUM</i>                                                                                                              |
+| `max_purchase_price`     | number  | Limit result set to products based on a maximum purchase price. <i class="label label-atum">ATUM</i>                                                                                                              |
+| `supplier`               | integer | Limit result set to products linked to the specified Supplier ID. <i class="label label-atum">ATUM</i>                                                                                                            |
+| `supplier_sku`           | string  | Limit result set to products with a specific Supplier SKU. <i class="label label-atum">ATUM</i>                                                                                                                   |
+| `barcode`                | string  | Limit result set to products with a specific barcode. <i class="label label-atum">ATUM</i>                                                                                                                        |
+| `multi_inventory`        | string  | Limit result set to products with a specific Multi-Inventory status. Options: `yes`, `no` and `global`. <i class="label label-addon">Multi-Inventory</i> <i class="label label-atum">ATUM</i>                     |
+| `inventory_sorting_mode` | string  | Limit result set to products with a specific inventory sorting mode. Options: `fifo`, `lifo`, `bbe`, `manual` and `global`. <i class="label label-addon">Multi-Inventory</i> <i class="label label-atum">ATUM</i> |
+| `inventory_iteration`    | string  | Limit result set to products with a specific inventory iteration. Options: `use_next`, `out_of_stock` and `global`. <i class="label label-addon">Multi-Inventory</i> <i class="label label-atum">ATUM</i>         |
+| `expirable_inventories`  | string  | Limit result set to products with a specific expirable inventories option. Options: `yes`, `no` and `global`. <i class="label label-addon">Multi-Inventory</i> <i class="label label-atum">ATUM</i>               |
+| `price_per_inventory`    | string  | Limit result set to products with a specific price per inventory option. Options: `yes`, `no` and `global`. <i class="label label-addon">Multi-Inventory</i> <i class="label label-atum">ATUM</i>                 |
+| `bom_sellable`           | boolean | Limit result set to sellable BOM products. It should be used in conjunction with the `type` set to any BOM type. <i class="label label-addon">Product Levels</i> <i class="label label-atum">ATUM</i>             |
 
 ## Update a product variation ##
 
@@ -1436,6 +1447,7 @@ woocommerce.put("products/22/variations/23", data).parsed_response
     "purchase_price": 8,
     "supplier_id": 399,
     "supplier_sku": "",
+    "barcode": "",
     "atum_controlled": true,
     "out_stock_date": null,
     "out_stock_threshold": 0,
@@ -1595,6 +1607,7 @@ woocommerce.delete("products/22/variations/2131", force: true).parsed_response
     "purchase_price": 6.5,
     "supplier_id": 0,
     "supplier_sku": "",
+    "barcode": "",
     "atum_controlled": false,
     "out_stock_date": null,
     "out_stock_threshold": 0,
@@ -1938,6 +1951,7 @@ woocommerce.post("products/22/variations/batch", data).parsed_response
             "purchase_price": 0,
             "supplier_id": 0,
             "supplier_sku": "",
+            "barcode": "",
             "atum_controlled": true,
             "out_stock_date": null,
             "out_stock_threshold": 0,
@@ -2037,6 +2051,7 @@ woocommerce.post("products/22/variations/batch", data).parsed_response
             "purchase_price": 0,
             "supplier_id": 0,
             "supplier_sku": "",
+            "barcode": "",
             "atum_controlled": true,
             "out_stock_date": null,
             "out_stock_threshold": 0,
@@ -2138,6 +2153,7 @@ woocommerce.post("products/22/variations/batch", data).parsed_response
             "purchase_price": 12,
             "supplier_id": 399,
             "supplier_sku": "VARSKU",
+            "barcode": "AAAAOOOOOOP",
             "atum_controlled": true,
             "out_stock_date": null,
             "out_stock_threshold": 0,
@@ -2239,6 +2255,7 @@ woocommerce.post("products/22/variations/batch", data).parsed_response
             "purchase_price": 6.5,
             "supplier_id": 0,
             "supplier_sku": "",
+            "barcode": "",
             "atum_controlled": true,
             "out_stock_date": null,
             "out_stock_threshold": 0,
@@ -2590,6 +2607,7 @@ woocommerce.post("products/22/variations/batch", data).parsed_response
             "purchase_price": 0,
             "supplier_id": 0,
             "supplier_sku": "",
+            "barcode": "",
             "atum_controlled": true,
             "out_stock_date": null,
             "out_stock_threshold": 0,
@@ -2689,6 +2707,7 @@ woocommerce.post("products/22/variations/batch", data).parsed_response
             "purchase_price": 0,
             "supplier_id": 0,
             "supplier_sku": "",
+            "barcode": "",
             "atum_controlled": true,
             "out_stock_date": null,
             "out_stock_threshold": 0,
@@ -2790,6 +2809,7 @@ woocommerce.post("products/22/variations/batch", data).parsed_response
             "purchase_price": 12,
             "supplier_id": 399,
             "supplier_sku": "VARSKU",
+            "barcode": "AAAAOOOOOOP",
             "atum_controlled": true,
             "out_stock_date": null,
             "out_stock_threshold": 0,
@@ -2891,6 +2911,7 @@ woocommerce.post("products/22/variations/batch", data).parsed_response
             "purchase_price": 6.5,
             "supplier_id": 0,
             "supplier_sku": "",
+            "barcode": "",
             "atum_controlled": true,
             "out_stock_date": null,
             "out_stock_threshold": 0,

@@ -6,14 +6,15 @@ The ATUM product locations API allows you to create, view, update, and delete in
 
 ## Product location properties ##
 
-| Attribute     | Type    | Description                                                                                                      |
-|---------------|---------|------------------------------------------------------------------------------------------------------------------|
-| `id`          | integer | Unique identifier for the resource. <i class="label label-info">read-only</i>                                    |
-| `name`        | string  | Location name. <i class="label label-info">mandatory</i>                                                         |
-| `slug`        | string  | An alphanumeric identifier for the resource unique to its type.                                                  |
-| `parent`      | integer | The ID for the parent of the resource.                                                                           |
-| `description` | string  | HTML description of the resource.                                                                                |
-| `count`       | integer | Number of published products for the resource. <i class="label label-info">read-only</i>                         |                                                                             |
+| Attribute     | Type    | Description                                                                              |
+|---------------|---------|------------------------------------------------------------------------------------------|
+| `id`          | integer | Unique identifier for the resource. <i class="label label-info">read-only</i>            |
+| `name`        | string  | Location name. <i class="label label-info">mandatory</i>                                 |
+| `slug`        | string  | An alphanumeric identifier for the resource unique to its type.                          |
+| `parent`      | integer | The ID for the parent of the resource.                                                   |
+| `description` | string  | HTML description of the resource.                                                        |
+| `count`       | integer | Number of published products for the resource. <i class="label label-info">read-only</i> |                                                                             |
+| `barcode`     | string  | Location's barcode. <i class="label label-atum">ATUM</i>                                 |                                                                             |
 
 ## Create a product location ##
 
@@ -94,6 +95,7 @@ woocommerce.post("products/atum-locations", data).parsed_response
     "parent": 38,
     "description": "",
     "count": 0,
+    "barcode": "",
     "_links": {
         "self": [
             {
@@ -162,6 +164,7 @@ woocommerce.get("products/atum-locations/38").parsed_response
     "parent": 0,
     "description": "",
     "count": 7,
+    "barcode": "",
     "_links": {
         "self": [
             {
@@ -226,6 +229,7 @@ woocommerce.get("products/atum-locations").parsed_response
         "parent": 0,
         "description": "",
         "count": 5,
+        "barcode": "",
         "_links": {
             "self": [
                 {
@@ -246,6 +250,7 @@ woocommerce.get("products/atum-locations").parsed_response
         "parent": 37,
         "description": "",
         "count": 3,
+        "barcode": "",
         "_links": {
             "self": [
                 {
@@ -271,6 +276,7 @@ woocommerce.get("products/atum-locations").parsed_response
         "parent": 38,
         "description": "",
         "count": 0,
+        "barcode": "",
         "_links": {
             "self": [
                 {
@@ -296,6 +302,7 @@ woocommerce.get("products/atum-locations").parsed_response
         "parent": 0,
         "description": "",
         "count": 0,
+        "barcode": "",
         "_links": {
             "self": [
                 {
@@ -316,6 +323,7 @@ woocommerce.get("products/atum-locations").parsed_response
         "parent": 0,
         "description": "",
         "count": 7,
+        "barcode": "",
         "_links": {
             "self": [
                 {
@@ -336,6 +344,7 @@ woocommerce.get("products/atum-locations").parsed_response
         "parent": 0,
         "description": "",
         "count": 7,
+        "barcode": "UIOHOUIGHOUO",
         "_links": {
             "self": [
                 {
@@ -356,6 +365,7 @@ woocommerce.get("products/atum-locations").parsed_response
         "parent": 37,
         "description": "",
         "count": 6,
+        "barcode": "",
         "_links": {
             "self": [
                 {
@@ -393,6 +403,7 @@ woocommerce.get("products/atum-locations").parsed_response
 | `parent`     | integer | Limit result set to resources assigned to a specific parent.                                                                                 |
 | `product`    | integer | Limit result set to resources assigned to a specific product.                                                                                |
 | `slug`       | string  | Limit result set to resources with a specific slug.                                                                                          |
+| `barcode`    | string  | Limit result set to resources with a barcode.                                                                                                |
 
 ## Update a product location ##
 
@@ -466,6 +477,7 @@ woocommerce.put("products/atum-locations/58", data).parsed_response
     "parent": 38,
     "description": "Manchester city.",
     "count": 0,
+    "barcode": "",
     "_links": {
         "self": [
             {
@@ -538,6 +550,7 @@ woocommerce.delete("products/atum-locations/58", force: true).parsed_response
     "parent": 38,
     "description": "Manchester city.",
     "count": 0,
+    "barcode": "",
     "_links": {
         "self": [
             {
@@ -727,6 +740,7 @@ woocommerce.post("products/atum-locations/batch", data).parsed_response
             "parent": 38,
             "description": "",
             "count": 0,
+            "barcode": "",
             "_links": {
                 "self": [
                     {
@@ -752,6 +766,7 @@ woocommerce.post("products/atum-locations/batch", data).parsed_response
             "parent": 0,
             "description": "",
             "count": 0,
+            "barcode": "",
             "_links": {
                 "self": [
                     {
@@ -774,6 +789,7 @@ woocommerce.post("products/atum-locations/batch", data).parsed_response
             "parent": 37,
             "description": "Valencia city.",
             "count": 6,
+            "barcode": "",
             "_links": {
                 "self": [
                     {
@@ -801,6 +817,7 @@ woocommerce.post("products/atum-locations/batch", data).parsed_response
             "parent": 38,
             "description": "",
             "count": 0,
+            "barcode": "",
             "_links": {
                 "self": [
                     {

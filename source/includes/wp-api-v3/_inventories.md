@@ -32,27 +32,28 @@ The ATUM inventories API allows you to create, view, update, and delete inventor
 | `out_stock_days`   | integer   | The number of days that the product is Out of stock. <i class="label label-info">read-only</i>                         |
 | `lost_sales`       | number    | Product lost sales. <i class="label label-info">read-only</i>                                                          |
 | `update_date`      | date-time | Last date when the inventory data was calculated and saved for this product, as GMT.                                   |
-| `meta_data`        | object    | Meta data. See [Inventories - Meta data properties](#inventories-meta-data-properties)       
+| `meta_data`        | object    | Meta data. See [Inventories - Meta data properties](#inventories-meta-data-properties)                                 |
                                                                                                           
 ### Inventories - Meta data properties ###
 
-| Attribute             | Type     | Description                                             |
-|-----------------------|----------|---------------------------------------------------------|
-| `sku`                 | string   | Inventory's SKU.                                        |
-| `manage_stock`        | boolean  | Whether the stock is being managed for the inventory.   |
-| `stock_quantity`      | number   | Inventory's stock amount.                               |
-| `backorders`          | boolean  | Whether the back orders are allowed.                    |
-| `stock_status`        | string   | Inventory's stock status.                               |
-| `supplier_id`         | integer  | Inventoy supplier's ID.                                 |
-| `supplier_sku`        | string   | Inventory supplier's SKU.                               |
-| `out_stock_threshold` | number   | Inventory's out of stock threshold.                     |
-| `purchase_price`     | number    | Inventory's purchase price.                             |
-| `price`              | number    | Inventory's price.                                      |
-| `regular_price`      | number    | Inventory's regular price.                              |
-| `sale_price`         | number    | Inventory's sale price.                                 |
-| `date_on_sale_from`  | date-time | The date when starts the sale price, as GMT.            |
-| `date_on_sale_to`    | date-time | The date when ends the sale price, as GMT.              |
-| `out_stock_date`     | date-time | The date when the inventory run out of stock, as GMT.   |
+| Attribute             | Type     | Description                                           |
+|-----------------------|----------|-------------------------------------------------------|
+| `sku`                 | string   | Inventory's SKU.                                      |
+| `manage_stock`        | boolean  | Whether the stock is being managed for the inventory. |
+| `stock_quantity`      | number   | Inventory's stock amount.                             |
+| `backorders`          | boolean  | Whether the back orders are allowed.                  |
+| `stock_status`        | string   | Inventory's stock status.                             |
+| `supplier_id`         | integer  | Inventoy supplier's ID.                               |
+| `supplier_sku`        | string   | Inventory supplier's SKU.                             |
+| `barcode`             | string   | Inventory barcode.                                    |
+| `out_stock_threshold` | number   | Inventory's out of stock threshold.                   |
+| `purchase_price`      | number   | Inventory's purchase price.                           |
+| `price`               | number   | Inventory's price.                                    |
+| `regular_price`       | number   | Inventory's regular price.                            |
+| `sale_price`          | number   | Inventory's sale price.                               |
+| `date_on_sale_from`   | date-time| The date when starts the sale price, as GMT.          |
+| `date_on_sale_to`     | date-time| The date when ends the sale price, as GMT.            |
+| `out_stock_date`      | date-time| The date when the inventory run out of stock, as GMT. |
 
 ## Create an inventory ##
 
@@ -301,6 +302,7 @@ woocommerce.get("products/507/inventories/208").parsed_response
         "stock_status": "instock",
         "supplier_id": "",
         "supplier_sku": "",
+        "barcode": "",
         "sold_individually": false,
         "out_stock_threshold": "",
         "purchase_price": "9.5",
@@ -408,6 +410,7 @@ woocommerce.get("products/507/inventories").parsed_response
             "stock_status": "instock",
             "supplier_id": 399,
             "supplier_sku": "CRYPTO",
+            "barcode": "INVBARKJHOIHO",
             "sold_individually": false,
             "out_stock_threshold": "",
             "purchase_price": "2",
@@ -469,6 +472,7 @@ woocommerce.get("products/507/inventories").parsed_response
             "stock_status": "instock",
             "supplier_id": "",
             "supplier_sku": "",
+            "barcode": "",
             "sold_individually": false,
             "out_stock_threshold": "",
             "purchase_price": "9.5",
@@ -502,20 +506,22 @@ woocommerce.get("products/507/inventories").parsed_response
 
 #### Available parameters ####
 
-| Parameter           | Type    | Description                                                                                                                                 |
-|---------------------|---------|---------------------------------------------------------------------------------------------------------------------------------------------|
-| `after`             | string  | Limit response to resources created after a given ISO8601 compliant date.                                                                   |
-| `before`            | string  | Limit response to resources created before a given ISO8601 compliant date.                                                                  |
-| `exclude`           | array   | Ensure result set excludes specific IDs.                                                                                                    |
-| `include`           | array   | Limit result set excludes specific IDs.                                                                                                     |
-| `offset`            | integer | Offset the result set by a specific number of items.                                                                                        |
-| `order`             | string  | Order sort attribute ascending or descending. Options: `asc` and `desc`. Default is `asc`.                                                  |
-| `orderby`           | string  | Sort collection by object attribute. Options: `priority`, `inventory_date`, `id`, `name` and `bbe_date`. Default is `priority`.             |
-| `name`              | string  | Limit result set to inventories with a specific name.                                                                                       |
-| `exclude_write_off` | boolean | Exclude from result set the inventories that were marked as 'write off'. Default is `true`.                                                 |
-| `lot`               | string  | Limit result set to inventories with the specified LOT/BATCH number.                                                                        |
-| `countries`         | string  | If the country restriction mode is enabled, limit the result set to inventories linked to the specified country.                            |
-| `shipping_zone`     | string  | If the shipping zone restriction mode is enabled, limit the result set to inventories linked to the specified shipping zone.                |
+| Parameter           | Type    | Description                                                                                                                     |
+|---------------------|---------|---------------------------------------------------------------------------------------------------------------------------------|
+| `after`             | string  | Limit response to resources created after a given ISO8601 compliant date.                                                       |
+| `before`            | string  | Limit response to resources created before a given ISO8601 compliant date.                                                      |
+| `exclude`           | array   | Ensure result set excludes specific IDs.                                                                                        |
+| `include`           | array   | Limit result set excludes specific IDs.                                                                                         |
+| `offset`            | integer | Offset the result set by a specific number of items.                                                                            |
+| `order`             | string  | Order sort attribute ascending or descending. Options: `asc` and `desc`. Default is `asc`.                                      |
+| `orderby`           | string  | Sort collection by object attribute. Options: `priority`, `inventory_date`, `id`, `name` and `bbe_date`. Default is `priority`. |
+| `name`              | string  | Limit result set to inventories with a specific name.                                                                           |
+| `exclude_write_off` | boolean | Exclude from result set the inventories that were marked as 'write off'. Default is `true`.                                     |
+| `lot`               | string  | Limit result set to inventories with the specified LOT/BATCH number.                                                            |
+| `barcode`           | string  | Limit result set to inventories with the specified barcode.                                                                     |
+| `countries`         | string  | If the country restriction mode is enabled, limit the result set to inventories linked to the specified country.                |
+| `shipping_zone`     | string  | If the shipping zone restriction mode is enabled, limit the result set to inventories linked to the specified shipping zone.    |
+| `location`          | string  | Limit the result set to inventories linked to the specified location ID or slug.                                                |
 
 ## List all the inventories ##
 
@@ -592,6 +598,7 @@ woocommerce.get("atum/inventories").parsed_response
             "stock_status": "instock",
             "supplier_id": 399,
             "supplier_sku": "SUPSK1",
+            "barcode": "AAAAAABBBBBB",
             "sold_individually": false,
             "out_stock_threshold": "",
             "purchase_price": "18.9",
@@ -654,6 +661,7 @@ woocommerce.get("atum/inventories").parsed_response
             "stock_status": "instock",
             "supplier_id": "",
             "supplier_sku": "",
+            "barcode": "",
             "sold_individually": false,
             "out_stock_threshold": 0,
             "purchase_price": "128",
@@ -716,6 +724,7 @@ woocommerce.get("atum/inventories").parsed_response
             "stock_status": "instock",
             "supplier_id": "",
             "supplier_sku": "",
+            "barcode": "",
             "sold_individually": false,
             "out_stock_threshold": "",
             "purchase_price": "5",
@@ -750,24 +759,26 @@ woocommerce.get("atum/inventories").parsed_response
 
 #### Available parameters ####
 
-| Parameter           | Type    | Description                                                                                                                                 |
-|---------------------|---------|---------------------------------------------------------------------------------------------------------------------------------------------|
-| `after`             | string  | Limit response to resources created after a given ISO8601 compliant date.                                                                   |
-| `before`            | string  | Limit response to resources created before a given ISO8601 compliant date.                                                                  |
-| `exclude`           | array   | Ensure result set excludes specific IDs.                                                                                                    |
-| `include`           | array   | Limit result set excludes specific IDs.                                                                                                     |
-| `offset`            | integer | Offset the result set by a specific number of items.                                                                                        |
-| `page`              | integer | Current page of the collection. Default is `1`.                                                                                             |
-| `per_page`          | integer | Maximum number of items to be returned in result set. Default is `10`.                                                                      |
-| `order`             | string  | Order sort attribute ascending or descending. Options: `asc` and `desc`. Default is `asc`.                                                  |
-| `orderby`           | string  | Sort collection by object attribute. Options: `priority`, `inventory_date`, `id`, `name` and `bbe_date`. Default is `id`.                   |
-| `name`              | string  | Limit result set to inventories with a specific name.                                                                                       |
-| `exclude_write_off` | boolean | Exclude from result set the inventories that were marked as 'write off'. Default is `true`.                                                 |
-| `lot`               | string  | Limit result set to inventories with the specified LOT/BATCH number.                                                                        |
-| `countries`         | string  | If the country restriction mode is enabled, limit the result set to inventories linked to the specified country.                            |
-| `shipping_zone`     | string  | If the shipping zone restriction mode is enabled, limit the result set to inventories linked to the specified shipping zone.                |
-| `product`           | integer | Filter the results by the specified product ID.                                                                                             |
-| `search`            | string  | Limit results to those matching a string.                                                                                                   |
+| Parameter           | Type    | Description                                                                                                                  |
+|---------------------|---------|------------------------------------------------------------------------------------------------------------------------------|
+| `after`             | string  | Limit response to resources created after a given ISO8601 compliant date.                                                    |
+| `before`            | string  | Limit response to resources created before a given ISO8601 compliant date.                                                   |
+| `exclude`           | array   | Ensure result set excludes specific IDs.                                                                                     |
+| `include`           | array   | Limit result set excludes specific IDs.                                                                                      |
+| `offset`            | integer | Offset the result set by a specific number of items.                                                                         |
+| `page`              | integer | Current page of the collection. Default is `1`.                                                                              |
+| `per_page`          | integer | Maximum number of items to be returned in result set. Default is `10`.                                                       |
+| `order`             | string  | Order sort attribute ascending or descending. Options: `asc` and `desc`. Default is `asc`.                                   |
+| `orderby`           | string  | Sort collection by object attribute. Options: `priority`, `inventory_date`, `id`, `name` and `bbe_date`. Default is `id`.    |
+| `name`              | string  | Limit result set to inventories with a specific name.                                                                        |
+| `exclude_write_off` | boolean | Exclude from result set the inventories that were marked as 'write off'. Default is `true`.                                  |
+| `lot`               | string  | Limit result set to inventories with the specified LOT/BATCH number.                                                         |
+| `barcode`           | string  | Limit result set to inventories with the specified barcode.                                                                  |
+| `countries`         | string  | If the country restriction mode is enabled, limit the result set to inventories linked to the specified country.             |
+| `shipping_zone`     | string  | If the shipping zone restriction mode is enabled, limit the result set to inventories linked to the specified shipping zone. |
+| `location`          | string  | Limit the result set to inventories linked to the specified location ID or slug.                                             |
+| `product`           | integer | Filter the results by the specified product ID.                                                                              |
+| `search`            | string  | Limit results to those matching a string.                                                                                    |
 
 
 ## Update an inventory ##
@@ -866,6 +877,7 @@ woocommerce.put("products/507/inventories/208", data).parsed_response
         "stock_status": "instock",
         "supplier_id": "",
         "supplier_sku": "",
+        "barcode": "",
         "sold_individually": false,
         "out_stock_threshold": "",
         "purchase_price": "9.5",
@@ -962,6 +974,7 @@ woocommerce.delete("products/507/inventories/208", force: true).parsed_response
         "stock_status": "instock",
         "supplier_id": "",
         "supplier_sku": "",
+        "barcode": "",
         "sold_individually": false,
         "out_stock_threshold": "",
         "purchase_price": "9.5",
@@ -1167,6 +1180,7 @@ woocommerce.post("products/507/inventories/batch", data).parsed_response
                 "stock_status": "",
                 "supplier_id": "",
                 "supplier_sku": "",
+                "barcode": "",
                 "sold_individually": false,
                 "out_stock_threshold": "",
                 "purchase_price": "",
@@ -1221,6 +1235,7 @@ woocommerce.post("products/507/inventories/batch", data).parsed_response
                 "stock_status": "instock",
                 "supplier_id": "",
                 "supplier_sku": "",
+                "barcode": "",
                 "sold_individually": false,
                 "out_stock_threshold": "",
                 "purchase_price": "5",
@@ -1272,6 +1287,7 @@ woocommerce.post("products/507/inventories/batch", data).parsed_response
                 "stock_status": "",
                 "supplier_id": "",
                 "supplier_sku": "",
+                "barcode": "",
                 "sold_individually": false,
                 "out_stock_threshold": "",
                 "purchase_price": "",
@@ -1321,6 +1337,7 @@ woocommerce.post("products/507/inventories/batch", data).parsed_response
                 "stock_status": "",
                 "supplier_id": "",
                 "supplier_sku": "",
+                "barcode": "",
                 "sold_individually": false,
                 "out_stock_threshold": "",
                 "purchase_price": "",
@@ -1526,6 +1543,7 @@ woocommerce.post("atum/inventories/batch", data).parsed_response
                 "stock_status": "",
                 "supplier_id": "",
                 "supplier_sku": "",
+                "barcode": "",
                 "sold_individually": false,
                 "out_stock_threshold": "",
                 "purchase_price": "",
@@ -1580,6 +1598,7 @@ woocommerce.post("atum/inventories/batch", data).parsed_response
                 "stock_status": "instock",
                 "supplier_id": "",
                 "supplier_sku": "",
+                "barcode": "",
                 "sold_individually": false,
                 "out_stock_threshold": "",
                 "purchase_price": "5",
@@ -1631,6 +1650,7 @@ woocommerce.post("atum/inventories/batch", data).parsed_response
                 "stock_status": "",
                 "supplier_id": "",
                 "supplier_sku": "",
+                "barcode": "",
                 "sold_individually": false,
                 "out_stock_threshold": "",
                 "purchase_price": "",
@@ -1680,6 +1700,7 @@ woocommerce.post("atum/inventories/batch", data).parsed_response
                 "stock_status": "",
                 "supplier_id": "",
                 "supplier_sku": "",
+                "barcode": "",
                 "sold_individually": false,
                 "out_stock_threshold": "",
                 "purchase_price": "",
